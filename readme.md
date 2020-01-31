@@ -3,5 +3,5 @@ This is a markdown file, generally the readme.md file in a repository tells any 
 Kyle McPherson (1901204)
 Calum Watson (1705061)
 Artur Mugin ()
-Daniel Akiode ()
+Daniel Akiode (1905423)
 Saran K ()
