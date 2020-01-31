@@ -101,60 +101,7 @@
 
 
 
-<table id="provinceinfo" style="color: white;">
-			<tr>
-				<th colspan="6">Province Information</th>
-			<tr>
-			<tr>
-				<th>Province Name</th>
-				<th>Province ShortName</th>
-				<th>Confirmed Count</th>
-				<th>Suspected Count</th>
-				<th>Cured Count</th>
-				<th>Dead Count</th>
-			</tr>
 
-
-
-
-
-
-    </div>
-		</table>
-		<br><br>
-		<table id="countryinfo" style="color: white;">
-			<tr>
-				<th colspan="5">Country Information</th>
-			<tr>
-			<tr>
-				<th>Country Name</th>
-				<th>Confirmed Count</th>
-				<th>Suspected Count</th>
-				<th>Cured Count</th>
-				<th>Dead Count</th>
-			</tr>
-		</table>
-
-    <script>
-		var url = 'http://127.0.0.1:5000/data/api/v1.0/other-countries/';
-		var url2 = 'http://127.0.0.1:5000/data/api/v1.0/chinese-provinces/';
-		$.getJSON(url, function(data) 
-		{
-			$.each(data, function(i, item) 
-			{
-				$("#countryinfo").append(`<tr><td>${data[i].provinceName}</td><td>${data[i].confirmedCount}</td><td>${data[i].suspectedCount}</td><td>${data[i].curedCount}</td><td>${data[i].deadCount}</td></tr>`);
-			});
-		});
-		
-		
-		$.getJSON(url2, function(data) 
-		{
-			$.each(data, function(i, item) 
-			{
-				$("#provinceinfo").append(`<tr><td>${data[i].provinceName}</td><td>${data[i].provinceShortName}</td><td>${data[i].confirmedCount}</td><td>${data[i].suspectedCount}</td><td>${data[i].curedCount}</td><td>${data[i].deadCount}</td></tr>`);
-			});
-		});
-    </script>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
