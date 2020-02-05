@@ -175,6 +175,14 @@ body, html {
 #something {background-color: #181818;}
 
 
+/* --- cursor follower css */
+#image {
+  position: absolute;
+}
+
+#imagefollower {
+  position: absolute;
+}
 
 
 
