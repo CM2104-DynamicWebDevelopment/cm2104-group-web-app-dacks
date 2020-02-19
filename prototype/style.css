@@ -142,7 +142,7 @@ body, html {
   margin: 0;
   font-family: Arial;
   background-color: #181818;
-  cursor:wait;
+  cursor:wait !important;
 }
 
 /* Style tab links */
