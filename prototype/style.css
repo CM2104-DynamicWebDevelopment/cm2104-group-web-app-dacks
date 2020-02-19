@@ -142,7 +142,7 @@ body, html {
   margin: 0;
   font-family: Arial;
   background-color: #181818;
-  cursor: URL("img/cursor.cur");
+  cursor: URL("img/cursor.cur"), default;
 }
 
 /* Style tab links */
