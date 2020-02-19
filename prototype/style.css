@@ -141,6 +141,7 @@ body, html {
   height: 100%;
   margin: 0;
   font-family: Arial;
+  background-color: #181818;
 }
 
 /* Style tab links */
@@ -182,6 +183,27 @@ body, html {
 
 #imagefollower {
   position: absolute;
+}
+
+/* ==========================================================================
+   Map CSS
+   ========================================================================== */
+#map 
+{
+	height: 50%;
+	width: 65%;
+	margin: 0 auto 0 auto;
+}
+
+.gmnoprint a, .gmnoprint span, .gmnoprint div 
+{
+    display:none;
+}
+
+.animated
+{
+	float: left;
+	color: white;
 }
 
 
