@@ -142,7 +142,6 @@ body, html {
   margin: 0;
   font-family: Arial;
   background-color: #181818;
-  cursor:wait !important;
 }
 
 /* Style tab links */
@@ -179,7 +178,8 @@ body, html {
 
 /* --- cursor follower css */
 #image {
-  position: absolute;
+    position: absolute;
+    transition: animation-timing-function: linear;
 }
 
 #imagefollower {

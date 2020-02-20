@@ -1,9 +1,10 @@
-var getNumbers = 'http://127.0.0.1:5000/api/overall-numbers/';
-var total;
+var getNumbers = 'http://kalzeo.pythonanywhere.com/api/overall-numbers/';
+var totalInfected;
 var suspected;
 var cured;
 var dead;
 var severe;
+
 
 $.getJSON(getNumbers, function(data)
 {

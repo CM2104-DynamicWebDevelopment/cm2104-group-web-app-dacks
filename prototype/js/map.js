@@ -1,27 +1,29 @@
 var map;
-var getLocations = 'http://127.0.0.1:5000/api/location-data/';
-var opened;
-var image1 = 'C:/Users/ixkal/Desktop/cm2104-group-web-app-dacks-master/final/img/map-icon.png';
-var infoWindowsOpenCurrently;// A temporarily variable to save currently opened info window
 
-function getLatLng(city)
+function getLatLng(locationDetails)
 {  
-	var urlz= "https://maps.googleapis.com/maps/api/geocode/json?address=" + city + "&key=AIzaSyCRFhUZw7jPcsEiL_OcgfKXrfhbKVMBlzE&language=en";
-	
-	var latLng = null;
+    var geocodeAPI = `https://maps.googleapis.com/maps/api/geocode/json?address=${locationDetails.name}&key=AIzaSyCRFhUZw7jPcsEiL_OcgfKXrfhbKVMBlzE&language=en`;
+    var latLng = null;
+
 	$.ajax({
-	  url: urlz,
+      url: geocodeAPI,
 	  dataType: 'json',
-	  async: false,
 	  success: function(data) 
-	  {
-		var path = data["results"]["0"]["geometry"]["location"];
-		latLng = {lat: path['lat'], lng: path['lng']};
+      {
+          try
+          {
+              var path = data["results"]["0"]["geometry"]["location"];
+              latLng = { lat: path['lat'], lng: path['lng'] };
+              placeMarker(locationDetails, latLng);
+          }
+          catch (e)
+          {
+              // do nothing
+          }
 	  }
 	});
-	
-	return latLng
 }
+
 
 function initMap() 
 {
@@ -36,25 +38,25 @@ function initMap()
 		styles: mapStyle
 	});
 	
-	$.getJSON(getLocations, function(data)
+    $.getJSON("http://kalzeo.pythonanywhere.com/api/location-data/", function(data)
 	{
 		$.each(data, function(i, item)
-		{
-			var name = data[i].place;
-			var confirmed = data[i].infected;
-			var cured = data[i].cured;
-			var dead = data[i].dead;
-			
-			var latLng = getLatLng(name);
-			var marker = new google.maps.Marker({position: {lat:latLng.lat, lng:latLng.lng}, map: map, icon: image1});
-			
-			var info = `Location: ${name}<hr>Confirmed Infections: ${confirmed}<br>People Cured: ${cured}<br>Deaths Caused: ${dead}`;
-		    var infoWindow = new google.maps.InfoWindow({content: info});
-			
-			marker.addListener('click', function()
-			{
-				infoWindow.open(map, marker);
-			});
+        {
+            locationDetails = { name: data[i].place, confirmed: data[i].infected, cured: data[i].cured, dead: data[i].dead };
+            getLatLng(locationDetails);
 		});
 	});
+}
+
+function placeMarker(locationDetails, latLng)
+{
+    var marker = new google.maps.Marker({ position: { lat: latLng.lat, lng: latLng.lng }, map: map, icon: '../prototype/img/markericon.png' });
+
+    var info = `Location: ${locationDetails.name}<hr>Confirmed Infections: ${locationDetails.confirmed}<br>People Cured: ${locationDetails.cured}<br>Deaths Caused: ${locationDetails.dead}`;
+    var infoWindow = new google.maps.InfoWindow({ content: info });
+
+    marker.addListener('click', function ()
+    {
+        infoWindow.open(map, marker);
+    });
 }

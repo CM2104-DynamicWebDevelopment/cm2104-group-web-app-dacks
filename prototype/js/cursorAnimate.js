@@ -1,6 +1,14 @@
-var $circle = $('#image'),
-    $follow = $('#imagefollow');
+$(document).mousemove(function (e)
+{
+    $('#image').offset({
+        left: e.pageX,
+        top: e.pageY + 20
+    });
+});
 
+/*
+var $circle = $('#image'),
+var $follow = $('#imagefollow');
 function moveCircle(e) {
     TweenLite.to($circle, 0.3, {
       x: e.clientX,
@@ -35,3 +43,4 @@ function unhoverFunc(e) {
 $(window).on('mousemove', moveCircle);
 
 $("a").hover(hoverFunc, unhoverFunc);
+*/
