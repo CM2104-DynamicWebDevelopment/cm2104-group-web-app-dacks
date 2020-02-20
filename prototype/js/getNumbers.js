@@ -1,4 +1,3 @@
-var getNumbers = 'http://kalzeo.pythonanywhere.com/api/overall-numbers/';
 var totalInfected;
 var suspected;
 var cured;
@@ -6,9 +5,9 @@ var dead;
 var severe;
 
 
-$.getJSON(getNumbers, function(data)
+$.getJSON('http://kalzeo.pythonanywhere.com/api/overall-numbers/', function(data)
 {
-	$.each(data, function(i, item)
+	$.each(data, function(i)
 	{
 		total = data[i].totalCases;
 		$("#infectedTotal").append(total);

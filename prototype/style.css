@@ -177,9 +177,9 @@ body, html {
 
 
 /* --- cursor follower css */
-#image {
-    position: absolute;
-    transition: animation-timing-function: linear;
+#image
+{
+  position: absolute;
 }
 
 #imagefollower {

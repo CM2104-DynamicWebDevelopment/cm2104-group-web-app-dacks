@@ -30,9 +30,8 @@ function initMap()
 	map = new google.maps.Map(document.getElementById('map'), 
 	{
 		zoom: 3,
-		center: new google.maps.LatLng(38.9697, 59.5563),
+        center: new google.maps.LatLng(39.0742, 21.8243),
 		mapTypeId: 'roadmap',
-		scaleControl: false,
 		disableDefaultUI: true,
 		fullscreenControl: true,
 		styles: mapStyle
@@ -40,7 +39,7 @@ function initMap()
 	
     $.getJSON("http://kalzeo.pythonanywhere.com/api/location-data/", function(data)
 	{
-		$.each(data, function(i, item)
+		$.each(data, function(i)
         {
             locationDetails = { name: data[i].place, confirmed: data[i].infected, cured: data[i].cured, dead: data[i].dead };
             getLatLng(locationDetails);
