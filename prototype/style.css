@@ -1,213 +1,294 @@
 header {
-  position: relative;
-  background-color: black;
-  height: 75vh;
-  min-height: 25rem;
-  width: 100%;
-  overflow: hidden;
+    position: relative;
+    background-color: #000000;
+    height: 75vh;
+    min-height: 25rem;
+    width: 100%;
+    overflow: hidden;
 }
 
-header video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  z-index: 0;
-  -ms-transform: translateX(-50%) translateY(-50%);
-  -moz-transform: translateX(-50%) translateY(-50%);
-  -webkit-transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-50%) translateY(-50%);
-}
+    header video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        z-index: 0;
+        -ms-transform: translateX(-50%) translateY(-50%);
+        -moz-transform: translateX(-50%) translateY(-50%);
+        -webkit-transform: translateX(-50%) translateY(-50%);
+        transform: translateX(-50%) translateY(-50%);
+    }
 
-header .container {
-  position: relative;
-  z-index: 2;
-}
+    header .container {
+        position: relative;
+        z-index: 2;
+    }
 
-header .overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: black;
-  opacity: 0.5;
-  z-index: 1;
-}
+    header .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: #000000;
+        opacity: 0.5;
+        z-index: 1;
+    }
 
 @media (pointer: coarse) and (hover: none) {
-  header {
-    background: url('https://source.unsplash.com/XT5OInaElMw/1600x900') black no-repeat center center scroll;
-  }
-  header video {
-    display: none;
-  }
+    header {
+        background: url('https: //source.unsplash.com/XT5OInaElMw/1600x900') black no-repeat center center scroll;
+    }
+
+        header video {
+            display: none;
+        }
 }
-
-
-
-
-
-
 
 .lds-ripple {
-  display: inline-block;
-  position: relative;
-  width: 80px;
-  height: 80px;
-      margin-top: 20px;
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin-top: 20px;
+}
 
-}
-.lds-ripple div {
-  position: absolute;
-  border: 4px solid red;
-  opacity: 1;
-  border-radius: 50%;
-  animation: lds-ripple 2s cubic-bezier(0, 0.2, 0.8, 1) infinite;
-}
-.lds-ripple div:nth-child(2) {
-  animation-delay: -0.5s;
-}
+    .lds-ripple div {
+        position: absolute;
+        border: 4px solid red;
+        opacity: 1;
+        border-radius: 50%;
+        animation: lds-ripple 2s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+    }
+
+        .lds-ripple div: nth-child(2) {
+            animation-delay: -0.5s;
+        }
+
 @keyframes lds-ripple {
-  0% {
-    top: 36px;
-    left: 36px;
-    width: 0;
-    height: 0;
-    opacity: 1;
-  }
-  100% {
-    top: 0px;
-    left: 0px;
-    width: 72px;
-    height: 72px;
-    opacity: 0;
-  }
+    0% {
+        top: 36px;
+        left: 36px;
+        width: 0;
+        height: 0;
+        opacity: 1;
+    }
+
+    100% {
+        top: 0px;
+        left: 0px;
+        width: 72px;
+        height: 72px;
+        opacity: 0;
+    }
 }
 
-
-.row{
-
-	margin: 0;
-
+.row {
+    margin: 0;
 }
 
-
-h2{
-
-  font-size: 6rem;
-font-family: 'Bebas Neue', cursive;
-
+h2 {
+    font-size: 6rem;
+    font-family: 'Bebas Neue', cursive;
 }
-h3{color: #c70909;
-  font-weight: bold;
-  font-size: 40px;
-font-family: 'Bebas Neue', cursive;}
 
-p{
+h3 {
+    color: #c70909;
+    font-weight: bold;
+    font-size: 40px;
+    font-family: 'Bebas Neue', cursive;
+}
 
-color: white;
+p {
+    color: #FFFFFF;
     font-size: 30px;
-font-family: 'Bebas Neue';
+    font-family: 'Bebas Neue';
 }
 
+#aboutNCOV {
+    color: #c70909;
+    font-weight: bold;
+    font-size: 40px;
+}
 
+#ncovMapHeading {
+    color: #c70909;
+}
+
+#infectedRow {
+    background-color: #000000;
+}
+
+#containerRows {
+    padding-top: 69px;
+    width: 80%;
+    margin: auto;
+}
 
 .ml10 .text-wrapper {
-  position: relative;
-  display: inline-block;
-  padding-top: 0.2em;
-  padding-right: 0.05em;
-  padding-bottom: 0.1em;
-  overflow: hidden;
+    position: relative;
+    display: inline-block;
+    padding-top: 0.2em;
+    padding-right: 0.05em;
+    padding-bottom: 0.1em;
+    overflow: hidden;
 }
 
 .ml10 .letter {
-  display: inline-block;
-  line-height: 1em;
-  transform-origin: 0 0;
+    display: inline-block;
+    line-height: 1em;
+    transform-origin: 0 0;
 }
 
-
-
-
-
+.lead {
+    font-weight: bold !important;
+    text-transform: uppercase !important;
+    color: #c70909 !important;
+}
 
 /* Set height of body and the document to 100% */
-body, html {
-  height: 100%;
-  margin: 0;
-  font-family: Arial;
-  background-color: #181818;
+
+body,
+html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial;
+    background-color: #181818;
 }
 
 /* Style tab links */
+
 .tablink {
-  background-color: #181818;
-  color: white;
-  float: left;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 14px 16px;
-  font-size: 17px;
-  width: 33.33%;
-  transition: 0.8s;
+    background-color: #181818;
+    color: #FFFFFF;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    width: 33.33%;
+    transition: 0.8s;
 }
 
-.tablink:hover {
-  background-color: #0e0e0e;
-}
+    .tablink: hover {
+        background-color: #0e0e0e;
+    }
 
-/* Style the tab content (and add height:100% for full page content) */
+/* Style the tab content (and add height: 100% for full page content) */
+
 .tabcontent {
-  color: white;
-  display: none;
-  padding: 100px 20px;
-  height: 100%;
-
+    color: #FFFFFF;
+    display: none;
+    padding: 100px 20px;
+    height: 100%;
 }
 
-#Symptoms {background-color: #181818;}
-#Safe {background-color: #181818;}
-#something {background-color: #181818;}
+#Symptoms {
+    background-color: #181818;
+}
 
+#Safe {
+    background-color: #181818;
+}
+
+#something {
+    background-color: #181818;
+}
 
 /* --- cursor follower css */
-#image
-{
-  position: absolute;
+
+#image {
+    position: absolute;
 }
 
 #imagefollower {
-  position: absolute;
+    position: absolute;
 }
 
 /* ==========================================================================
-   Map CSS
-   ========================================================================== */
-#map 
-{
-	height: 50%;
-	width: 65%;
-	margin: 0 auto 0 auto;
+ Map CSS
+ ========================================================================== */
+
+#map {
+    height: 50%;
+    width: 65%;
+    margin: 0 auto 0 auto;
 }
 
-.gmnoprint a, .gmnoprint span, .gmnoprint div 
-{
-    display:none;
+.gmnoprint a,
+.gmnoprint span,
+.gmnoprint div {
+    display: none;
 }
 
-.animated
-{
-	float: left;
-	color: white;
+.animated {
+    float: left;
+    color: #FFFFFF;
 }
 
+/* ---- reset ---- */
 
+body {
+    margin: 0;
+    font: normal 75% Arial, Helvetica, sans-serif;
+}
 
+canvas {
+    display: block;
+    vertical-align: bottom;
+}
 
-/* ---- reset ---- */ body{ margin:0; font:normal 75% Arial, Helvetica, sans-serif; } canvas{ display: block; vertical-align: bottom; } /* ---- particles.js container ---- */ #particles-js{ position:absolute; width: 100%; height: 100%; background-color: #160001; background-image: url(""); background-repeat: no-repeat; background-size: cover; background-position: 50% 50%; } /* ---- stats.js ---- */ .count-particles{ background: #000022; position: absolute; top: 48px; left: 0; width: 80px; color: #13E8E9; font-size: .8em; text-align: left; text-indent: 4px; line-height: 14px; padding-bottom: 2px; font-family: Helvetica, Arial, sans-serif; font-weight: bold; } .js-count-particles{ font-size: 1.1em; } #stats, .count-particles{ -webkit-user-select: none; margin-top: 5px; margin-left: 5px; } #stats{ border-radius: 3px 3px 0 0; overflow: hidden; } .count-particles{ border-radius: 0 0 3px 3px; }
+/* ---- particles.js container ---- */
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #160001;
+    background-image: url("");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+/* ---- stats.js ---- */
+
+.count-particles {
+    background: #000022;
+    position: absolute;
+    top: 48px;
+    left: 0;
+    width: 80px;
+    color: #13E8E9;
+    font-size: .8em;
+    text-align: left;
+    text-indent: 4px;
+    line-height: 14px;
+    padding-bottom: 2px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: bold;
+}
+
+.js-count-particles {
+    font-size: 1.1em;
+}
+
+#stats,
+.count-particles {
+    -webkit-user-select: none;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+#stats {
+    border-radius: 3px 3px 0 0;
+    overflow: hidden;
+}
+
+.count-particles {
+    border-radius: 0 0 3px 3px;
+}
