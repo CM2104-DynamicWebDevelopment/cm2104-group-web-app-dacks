@@ -1,10 +1,7 @@
-function moveMouse()
+$(document).mousemove(function (e)
 {
-    $(document).mousemove(function (e)
-    {
-        $('#image').offset({
-            left: e.pageX,
-            top: e.pageY + 20
-        });
+    $('#image').offset({
+        left: e.pageX,
+        top: e.pageY + 20
     });
-}
+});
