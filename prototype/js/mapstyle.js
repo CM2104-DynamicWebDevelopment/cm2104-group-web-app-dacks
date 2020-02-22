@@ -1,3 +1,4 @@
+// Just the style of the map, ignore.
 var mapStyle = [
 	{
 		"featureType": "all",
