@@ -5,7 +5,7 @@ var dead;
 var severe;
 
 
-$.getJSON('http://kalzeo.pythonanywhere.com/api/overall-numbers/', function(data)
+$.getJSON('http://kalzeo.pythonanywhere.com/api/stats/', function(data)
 {
 	$.each(data, function(i)
 	{

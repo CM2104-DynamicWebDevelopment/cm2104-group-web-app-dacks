@@ -47,7 +47,7 @@ function initMap()
         });
 
     // Get the JSON returned from a specified URL	
-    $.getJSON("http://kalzeo.pythonanywhere.com/api/location-data/", function(data)
+    $.getJSON("http://kalzeo.pythonanywhere.com/api/locations/", function(data)
     {
         /*
          * Loop through each of the entries in the JSON to generate an object to hold the details of each location.
