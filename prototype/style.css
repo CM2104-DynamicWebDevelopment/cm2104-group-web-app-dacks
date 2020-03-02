@@ -1,3 +1,4 @@
+
 .row
 {
     color: white !important;
@@ -29,11 +30,13 @@
 	border: 0px;
 }
 
+/**/
 #nav-staysafe
 {
 	height: 1000px;
 }
 
+/**/
 header {
     position: relative;
     background-color: #000000;
@@ -73,16 +76,6 @@ header {
         opacity: 0.5;
         z-index: 1;
     }
-
-@media (pointer: coarse) and (hover: none) {
-    header {
-        background: url('https: //source.unsplash.com/XT5OInaElMw/1600x900') black no-repeat center center scroll;
-    }
-
-        header video {
-            display: none;
-        }
-}
 
 .lds-ripple {
     display: inline-block;
@@ -245,16 +238,14 @@ body, html {
 #image 
 {
     position: absolute;
+	z-index: 999;
 }
 
 #imagefollower {
     position: absolute;
 }
 
-/* ==========================================================================
- Map CSS
- ========================================================================== */
-
+/* Style for the overall Google map */
 #map 
 {
     height: 500px;
@@ -262,17 +253,19 @@ body, html {
     margin: 0 auto 0 auto;
 }
 
+/* Remove some of the annoying text off of the Google map*/
+.gmnoprint a, .gmnoprint span, .gmnoprint div 
+{
+    display: none;
+}
+
+/* Go back to top button */
 .back-to-top 
 {
     bottom: 25px;
     display: none;
 }
 
-.gmnoprint a,
-.gmnoprint span,
-.gmnoprint div {
-    display: none;
-}
 
 .animated {
     float: left;
@@ -281,11 +274,7 @@ body, html {
 
 /* ---- reset ---- */
 
-body {
-    margin: 0;
-    font: normal 75% Arial, Helvetica, sans-serif;
-	overflow-x: hidden;
-}
+
 
 canvas {
     display: block;
