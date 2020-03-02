@@ -245,6 +245,12 @@ body, html {
     margin: 0 auto 0 auto;
 }
 
+.back-to-top 
+{
+    bottom: 25px;
+    display: none;
+}
+
 .gmnoprint a,
 .gmnoprint span,
 .gmnoprint div {
