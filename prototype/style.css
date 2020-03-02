@@ -13,6 +13,11 @@
 	width: 33.3%;
 }
 
+#nav-staysafe
+{
+	height: 1000px;
+}
+
 header {
     position: relative;
     background-color: #000000;
@@ -168,12 +173,12 @@ p {
 
 /* Set height of body and the document to 100% */
 
-body,
-html {
+body, html {
     height: 100%;
     margin: 0;
     font-family: Arial;
     background-color: #181818;
+	overflow-x: hidden;
 }
 
 /* Style tab links */
@@ -196,7 +201,10 @@ html {
     }
 
 /* Style the tab content (and add height: 100% for full page content) */
-
+.timeline-header
+{
+	color: red;
+}
 .tabcontent {
     color: #FFFFFF;
     display: none;
@@ -218,7 +226,8 @@ html {
 
 /* --- cursor follower css */
 
-#image {
+#image 
+{
     position: absolute;
 }
 
@@ -252,6 +261,7 @@ html {
 body {
     margin: 0;
     font: normal 75% Arial, Helvetica, sans-serif;
+	overflow-x: hidden;
 }
 
 canvas {

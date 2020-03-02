@@ -1,7 +1,7 @@
 $(document).mousemove(function (e)
 {
     $('#image').offset({
-        left: e.pageX,
-        top: e.pageY + 20
+        left: e.pageX + 10,
+        top: e.pageY - 20
     });
 });
