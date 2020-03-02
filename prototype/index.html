@@ -2,28 +2,36 @@
 <html lang="en">
 
 <head>
+  <!-- Site encode  -->
     <meta charset="UTF-8">
+
+    <!--  Make the site mobile friendly and scale it -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="HandheldFriendly" content="true">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+    <!-- Material/Normal Bootstrap jQuery, JS and CSS  -->
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.13.0/js/mdb.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.13.0/css/mdb.min.css" rel="stylesheet">
+    <!--  Google font -->
     <link href="https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- import style and timeline css -->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" type="text/css" href="css/timeline.css">
 
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.13.0/js/mdb.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    
 
+<!-- import map, style map, -->
+    <!-- Import the JS for the map, cursor and animation for anchor point  -->
     <script src="js/map.js"></script>
     <script src="js/mapStyle.js"></script>
     <script src="js/getNumbers.js"></script>
     <script src="js/cursorAnimate.js"></script>
 	<script src="js/backToTop.js"></script>
-
+<!-- title -->
     <title>NCOV Tracker</title>
 
     <!--
@@ -40,19 +48,22 @@
      /  ************  \                      /  ************  \
     -->
 </head>
-
+<!-- start body -->
 <body>
-    <!-- cursor follower -->
+    <!-- virus image that folows cursor -->
     <div id="image">
         <img src="img/virus.png" alt="virus">
     </div>
 
-
+<!-- make video header -->
+    <!-- Video header that starts a video automatically and loops it -->
     <header>
         <div class="overlay"></div>
         <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
             <source src="https://www.sandwichmelody.com/wp-content/uploads/2020/01/video2.mp4" type="video/mp4">
         </video>
+
+        <!-- align title in the middle of header -->
         <div class="container h-100">
             <div class="d-flex h-100 text-center align-items-center">
                 <div class="w-100 text-white">
@@ -63,7 +74,7 @@
         </div>
     </header>
 	<br><br>
-
+<!-- nav bar -->
     <div class="list-group container d-flex justify-content-center navstyle" role="tablist">
         <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
             <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true"><h3>HOME</h3></a>
@@ -73,6 +84,8 @@
     </div>
 
     <div class="tab-content py-3 px-3 px-sm-0 d-flex justify-content-center" id="nav-tabContent">
+
+      <!-- Tab content for the homepage-->
         <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
 			<div class="flash">
 				<div class="row" id="infectedRow">
@@ -82,6 +95,7 @@
 								<div></div>
 								<div></div>
 							</div>
+
 							<h2 class="animated flash delay-2s" id="infectedTotal">INFECTED TOTAL: </h2>
 						</div>
 					</div>
@@ -93,10 +107,12 @@
                         <h3 class="text-center" id="aboutNCOV">Novel coronavirus (2019-nCoV)</h3>
                         <br>
                         <p class="text-justify">Coronaviruses are a large family of viruses that can cause respiratory illnesses such as the common cold, according to the Centers for Disease Control and Prevention (CDC). Most people get infected with coronaviruses at one point in their lives, but symptoms are typically mild to moderate. In some cases, the viruses can cause lower-respiratory tract illnesses such as pneumonia and bronchitis. - https://www.livescience.com</p>
-                        <br><!--<img src="https://external-lht6-1.xx.fbcdn.net/safe_image.php?d=AQDYWhj81Z_uFcjY&url=http%3A%2F%2Fimg1.joyreactor.cc%2Fpics%2Fpost%2F%D0%98%D0%98-%D0%BA%D0%BE%D1%80%D0%BE%D0%BD%D0%B0%D0%B2%D0%B8%D1%80%D1%83%D1%81-5698565.gif&ext=gif&_nc_hash=AQCWpl0ZJvLzzt-M" width="100%">-->>
+                        <br>
                     </div>
                     <div class="col-6">
+                      <!-- twitter title -->
                         <h3 class="text-center"><img src="https://www.freeiconspng.com/uploads/red-spot-light-png-6.png" width="30px;"> LIVE News Updates<br>
+                          <!-- add twitter iframe -->
 							<a class="twitter-timeline" width="50%" data-height="540" data-theme="dark" href="https://twitter.com/CoronaVirusFlu?ref_src=twsrc%5Etfw">Tweets by CoronaVirusFlu</a></h3>
                         <script async src="https://platform.twitter.com/widgets.js"></script>
                     </div>
@@ -108,10 +124,13 @@
             <div id="map" class="d-flex align-items-center"></div>
             <br>
             <br>
+            <!-- add our edited google map -->
             <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRFhUZw7jPcsEiL_OcgfKXrfhbKVMBlzE&callback=initMap" type="text/javascript"></script>
 		</div>
 
+        <!-- Tab content for the timeline page -->
         <div class="tab-pane fade show" id="nav-timeline" role="tabpanel" aria-labelledby="nav-timeline-tab">
+            <!-- The timeline -->
             <div class="timeline">
                 <div class="container-t left">
                   <div class="content-t">
@@ -193,6 +212,8 @@
                 </div>
               </div>
 		</div>
+
+    <!-- Tab content for the stay safe and symptoms page -->
 		<div class="tab-pane fade show" id="nav-staysafe" role="tabpanel" aria-labelledby="nav-staysafe-tab">
 			<p>Info to come</p>
         </div>
