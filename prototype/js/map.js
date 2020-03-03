@@ -1,5 +1,5 @@
-var map;
-var opened = false;
+var map; // The map
+var opened = false; // Keep track if a infoWindow has been opened
 
 /**
  * Get the latitude and longitude coordinates for a given location
@@ -8,10 +8,14 @@ var opened = false;
  */
 function getLatLng(locationDetails)
 {  
+	// Use AJAX to dynamically load the markers on the map
     $.ajax(
     {
+		// Use Google Geocode API to get the latitude and longitude of an address/location via JSON
         url: `https://maps.googleapis.com/maps/api/geocode/json?address=${locationDetails.name}&key=AIzaSyCRFhUZw7jPcsEiL_OcgfKXrfhbKVMBlzE&language=en`,
 	    dataType: 'json',
+
+		// If the API works successfully try and retrieve the latitude and longitude
 	    success: function(data) 
         {
             try
@@ -44,9 +48,9 @@ function initMap()
 		disableDefaultUI: true,
 		fullscreenControl: true,
 		styles: mapStyle
-        });
+    });
 
-    // Get the JSON returned from a specified URL	
+    // Get the JSON returned from our custom API for the locations infected with the Coronavirus
     $.getJSON("http://kalzeo.pythonanywhere.com/api/locations/", function(data)
     {
         /*
@@ -60,7 +64,7 @@ function initMap()
 		});
     });
 
-    // Set map bounds from Svalbard to Southern ocean
+    // Set map bounds from Svalbard to Antarctica
     var strictBounds = new google.maps.LatLngBounds(
         new google.maps.LatLng(-82.8628, 135.0000),
         new google.maps.LatLng(77.8750, 20.9752)
@@ -77,7 +81,7 @@ function initMap()
 }
 
 /**
- * Place a marker on the map that will have it's own infowindow with unique information
+ * Place a marker on the map that will have it's own infoWindow with unique information
  * when clicked.
  *
  * @param {any} locationDetails - The location details object
@@ -88,7 +92,7 @@ function placeMarker(locationDetails, latLng)
     // Create the marker and set it's options
     var marker = new google.maps.Marker({ position: { lat: latLng.lat, lng: latLng.lng }, map: map, icon: '../prototype/img/markericon.png' });
 
-    // The content for the infowindow when the marker gets clicked
+    // The content for the infoWindow when the marker gets clicked
     var info = `Location: ${locationDetails.name}<hr>Confirmed Infections: ${locationDetails.confirmed}<br>People Cured: ${locationDetails.cured}<br>Deaths Caused: ${locationDetails.dead}`;
     var infoWindow = new google.maps.InfoWindow({ content: info });
 
@@ -102,13 +106,16 @@ function placeMarker(locationDetails, latLng)
     *   infowindow and set the state as the new infowindow that will be opened. Open the new infowindow after the
     *   previous one has been shut.
     */
-    marker.addListener('click', function () {
-        if (opened == false) {
+    marker.addListener('click', function () 
+	{
+        if (opened == false) 
+		{
             infoWindow.open(map, marker);
             previousWindow = infoWindow;
             opened = true
         }
-        else {
+        else 
+		{
             previousWindow.close();
             previousWindow = infoWindow;
             infoWindow.open(map, marker);
