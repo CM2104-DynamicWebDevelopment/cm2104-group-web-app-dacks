@@ -51,7 +51,7 @@ function initMap()
     });
 
     // Get the JSON returned from our custom API for the locations infected with the Coronavirus
-    $.getJSON("http://kalzeo.pythonanywhere.com/api/locations/", function(data)
+    $.getJSON("https://kalzeo.pythonanywhere.com/api/locations/", function(data)
     {
         /*
          * Loop through each of the entries in the JSON to generate an object to hold the details of each location.
