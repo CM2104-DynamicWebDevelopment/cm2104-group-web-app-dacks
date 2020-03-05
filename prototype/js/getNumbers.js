@@ -9,7 +9,7 @@ var severe;
 $(document).ready(function()
 {
 	// Get the JSON returned from our custom API to get the overall stats of the Coronavirus
-	$.getJSON('http://kalzeo.pythonanywhere.com/api/stats/', function(data)
+	$.getJSON('https://kalzeo.pythonanywhere.com/api/stats/', function(data)
 	{
 		// Store the stats of the Coronavirus in their respected variables
 		total = data[0]["totalCases"];
