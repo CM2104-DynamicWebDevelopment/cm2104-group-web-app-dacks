@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Site encoding  -->
+    <meta charset="UTF-8">
+
+    <!--  Make the site mobile friendly and scale it -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="HandheldFriendly" content="true">
+
+    <!-- Material/Normal Bootstrap jQuery, JS and CSS  -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.13.0/js/mdb.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.13.0/css/mdb.min.css" rel="stylesheet">
+
+    <!--  Google fonts for Open Sans & Bebas Neue -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+    <!-- Import style and timeline css -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/timeline.css">
+
+    <!-- Import the JS for the map, cursor and animations for cursor and back to top button  -->
+    <script src="js/map.js"></script>
+    <script src="js/mapstyle.js"></script>
+    <script src="js/getNumbers.js"></script>
+    <script src="js/cursorAnimate.js"></script>
+    <script src="js/backToTop.js"></script>
+
+    <!-- Page title -->
+    <title>NCOV Tracker</title>
+
+    <!--
+       _______________                        |*\_/*|________
+      |  ___________  |     .-.     .-.      ||_/-\_|______  |
+      | |           | |    .****. .****.     | |           | |
+      | |   0   0   | |    .*****.*****.     | |   0   0   | |
+      | |     -     | |     .*********.      | |     -     | |
+      | |   \___/   | |      .*******.       | |   \___/   | |
+      | |___     ___| |       .*****.        | |___________| |
+      |_____|\_/|_____|        .***.         |_______________|
+        _|__|/ \|_|_.............*.............._|________|_
+       / ********** \                          / ********** \
+     /  ************  \                      /  ************  \
+    -->
+</head>
+
+<!-- Start of body -->
+
+<body>
+
+    <!-- Virus image that follows the cursor -->
+    <div id="image">
+        <img src="img/virus.png" alt="virus">
+    </div>
+
+    <!-- Video header that starts a video automatically and loops it -->
+    <header>
+        <div class="overlay"></div>
+        <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+            <source src="https://www.sandwichmelody.com/wp-content/uploads/2020/01/video2.mp4" type="video/mp4">
+        </video>
+
+        <!-- Align a title in the middle of video header -->
+        <div class="container h-100">
+            <div class="d-flex h-100 text-center align-items-center">
+                <div class="w-100 text-white">
+                    <h2><span class="letters">Coronavirus live map</span></h2>
+                    <p class="redHeadings">THE UNOFFICIAL VIRUS TRACKER</p>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- End of video header -->
+
+    <br>
+    <br>
+    <!-- Nav bar -->
+    <div class="list-group container d-flex justify-content-center navstyle" role="tablist">
+        <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+            <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true"><h3>HOME</h3></a>
+            <a class="nav-item nav-link" id="nav-timeline-tab" data-toggle="tab" href="#nav-timeline" role="tab" aria-controls="nav-timeline" aria-selected="false"><h3>TIMELINE</h3></a>
+            <a class="nav-item nav-link" id="nav-staysafe-tab" data-toggle="tab" href="#nav-staysafe" role="tab" aria-controls="nav-staysafe" aria-selected="false"><h3>STAY SAFE</h3></a>
+        </div>
+    </div>
+    <!-- End of nav bar -->
+
+    <!-- Create a container to display each tab in -->
+    <div class="tab-content py-3 px-3 px-sm-0 d-flex justify-content-center" id="nav-tabContent">
+
+        <!-- Tab content for the homepage -->
+        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+
+            <!-- Flash the text for the infected total -->
+            <div class="flash">
+                <div class="row" id="infectedRow">
+                    <div class="margin-auto">
+                        <div class="col">
+                            <div class="lds-ripple">
+                                <div></div>
+                                <div></div>
+                            </div>
+
+                            <h2 class="animated flash delay-2s" id="infectedTotal">INFECTED TOTAL: </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End flash -->
+
+            <!-- Container to store about NCOV and tweets -->
+            <div class="container-fluid">
+                <div class="row" id="containerRows">
+                    <!-- About NCOV column -->
+                    <div class="col-6">
+                        <h3 class="text-center redHeadings">Novel coronavirus (2019-nCoV)</h3>
+                        <br>
+                        <p class="text-justify">Coronaviruses are a large family of viruses that can cause respiratory illnesses such as the common cold, according to the Centers for Disease Control and Prevention (CDC). Most people get infected with coronaviruses at one point in their lives, but symptoms are typically mild to moderate. In some cases, the viruses can cause lower-respiratory tract illnesses<span><p>such as pneumonia and bronchitis. - https://www.livescience.com</p></span></p>
+                        <br>
+
+                    </div>
+                    <!-- End of about NCOV column -->
+
+                    <!-- Twitter column -->
+                    <div class="col-6">
+                        <!-- Twitter title -->
+                        <h3 class="text-center"><img src="https://www.freeiconspng.com/uploads/red-spot-light-png-6.png" width="30px;"> LIVE News Updates<br>
+                          <!-- Twitter iframe -->
+							<a class="twitter-timeline" width="50%" data-height="540" data-theme="dark" href="https://twitter.com/COVID19UPDATE?ref_src=twsrc%5Etfw">Tweets by COVID19UPDATE</a></h3>
+                        <script async src="https://platform.twitter.com/widgets.js"></script>
+                    </div>
+                    <!-- End of Twitter column -->
+                </div>
+            </div>
+            <!-- End of container -->
+
+            <!-- Live map heading -->
+            <div class="d-flex justify-content-center">
+                <h2 class="animated flash delay-2s redHeadings">Coronavirus Live Map</h2>
+            </div>
+            <!-- End of live map heading -->
+
+            <!-- The Google map -->
+            <div id="map" class="d-flex align-items-center"></div>
+            <br>
+            <br>
+
+            <!-- Google maps API - uses async and defer to allow the parsing of the HTML to continue while the script downloads -->
+            <!--<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRFhUZw7jPcsEiL_OcgfKXrfhbKVMBlzE&callback=initMap" type="text/javascript"></script>-->
+			<script async defer src="https://maps.googleapis.com/maps/api/js?key=0&callback=initMap" type="text/javascript"></script>
+        </div>
+        <!-- End of tab content for the homepage -->
+
+        <!-- Tab content for the timeline page, currently hardcoded but will be loaded from db later.-->
+        <div class="tab-pane fade show" id="nav-timeline" role="tabpanel" aria-labelledby="nav-timeline-tab">
+            <!-- The timeline -->
+            <div class="timeline">
+                <div class="container-t left">
+                    <div class="content-t">
+                        <h2 class="redHeadings">31st December 2019</h2>
+                        <p>First cases of a flu like illness have been reported in Wuhan.</p>
+                    </div>
+                </div>
+                <div class="container-t right">
+                    <div class="content-t">
+                        <h2 class="redHeadings">1st January 2020</h2>
+                        <p>More flu like cases are reported, and the source of the illness is thought to be a food market in the centre of Wuhan.</p>
+                    </div>
+                </div>
+                <div class="container-t left">
+                    <div class="content-t">
+                        <h2 class="redHeadings">5th January 2020</h2>
+                        <p>The World Health Organisation advises on a complete travel ban surrounding Wuhan.</p>
+                    </div>
+                </div>
+                <div class="container-t right">
+                    <div class="content-t">
+                        <h2 class="redHeadings">7th January 2020</h2>
+                        <p>Virus is given its official name Coronavirus as bird flu and SARS are ruled out.</p>
+                    </div>
+                </div>
+                <div class="container-t left">
+                    <div class="content-t">
+                        <h2 class="redHeadings">11th January 2020</h2>
+                        <p>The first death caused by the virus has been confirmed.</p>
+                    </div>
+                </div>
+                <div class="container-t right">
+                    <div class="content-t">
+                        <h2 class="redHeadings">17th January 2020</h2>
+                        <p>Japan confirm multiple infected from recent travellers to Wuhan.</p>
+                    </div>
+                </div>
+                <div class="container-t left">
+                    <div class="content-t">
+                        <h2 class="redHeadings">20th January 2020</h2>
+                        <p>A cure to specifically treat Coronavirus begins development.</p>
+                    </div>
+                </div>
+                <div class="container-t right">
+                    <div class="content-t">
+                        <h2 class="redHeadings">23rd January 2020</h2>
+                        <p>Chinese Government cancels all Chinese New Year celebrations to help contain the virus.</p>
+                    </div>
+                </div>
+                <div class="container-t left">
+                    <div class="content-t">
+                        <h2 class="redHeadings">31st January 2020</h2>
+                        <p>United States of America say they will deny entry to all people who have travelled to China in the last 14 days.</p>
+                    </div>
+                </div>
+                <div class="container-t right">
+                    <div class="content-t">
+                        <h2 class="redHeadings">2nd Febuary 2020</h2>
+                        <p>10 people on board a cruise ship in Japan test positive for the virus. The ship holds almsot 4000 people.</p>
+                    </div>
+                </div>
+                <div class="container-t left">
+                    <div class="content-t">
+                        <h2 class="redHeadings">7th Febuary 2020</h2>
+                        <p>Li Wenliang, the chinese doctor who warned people about the virus a month before the first confirmed case, dies from the virus.</p>
+                    </div>
+                </div>
+                <div class="container-t right">
+                    <div class="content-t">
+                        <h2 class="redHeadings">14th Febuary 2020</h2>
+                        <p>First death in Europe is a chinese traveller who was staying in France.</p>
+                    </div>
+                </div>
+                <div class="container-t left">
+                    <div class="content-t">
+                        <h2 class="redHeadings">25th Febuary 2020</h2>
+                        <p>The CDC in the USA warn American citezens to prepare for disruption as a result of the virus.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End of tab content for the timeline page -->
+
+        <!-- Tab content for the stay safe and symptoms page -->
+        <div class="tab-pane fade show" id="nav-staysafe" role="tabpanel" aria-labelledby="nav-staysafe-tab">
+            <!-- Create a container in the center of the page -->
+            <div class="container d-flex h text-center align-items-center">
+
+                <!-- Symptoms column -->
+                <div class="col">
+                    <h1 class="display-4 redHeadings">Symtpoms</h1>
+                    <p class="text-justify">Chesty Cough, with pain from coughing</p>
+                    <p class="text-justify">High Temperature and feeling hot all of the time</p>
+                    <p class="text-justify">Feeling tired after short excercise such as walking</p>
+                    <p class="text-justify">Sneezing often</p>
+                    <p class="text-justify">Headaches</p>
+                </div>
+                <!-- End of symptoms column -->
+
+                <!-- Prevention column -->
+                <div class="col">
+                    <h1 class="display-4 redHeadings">Prevention</h1>
+                    <p class="text-justify">Always cover moouth and nose when sneezing</p>
+                    <p class="text-justify">Avoid large gathering in places where coronavirus has been found</p>
+                    <p class="text-justify">Avoid travelling to regions and countries where coronavirus has been found</p>
+                    <p class="text-justify">Avoid contact with suspected infected victims</p>
+                </div>
+                <!-- End of prevention column -->
+            </div>
+            <!-- End of container -->
+        </div>
+        <!-- End of tab content for the stay safe and symptoms page -->
+    </div>
+
+    <!-- Back to top button -->
+    <a id="back-to-top"><img src="img/iconfinder_Arrow_Drop_Up_1063880.png" /></a>
+
+    <!-- Footer with copyright-->
+    <footer class="page-footer font-small gray">
+        <div class="footer-copyright text-center py-3">© 2020 Copyright: DACKS</div>
+    </footer>
+    <!-- End of footer -->
+
+</body>
+<!-- End of body -->
+
+</html>

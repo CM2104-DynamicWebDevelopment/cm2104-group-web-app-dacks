@@ -1,0 +1,210 @@
+/* Style for grid rows */
+.row
+{
+    margin: 0;
+    color: white !important;
+}
+
+/* Style for grid columns */
+.col
+{
+    font-size: 30px !important;
+}
+
+/* Style for the nav bar */
+.navstyle
+{
+    font-size: 20px;
+    background-color: 181818;
+    height: 55px;
+    width: 33.3%;
+}
+
+/* Style for all the tabs on the nav bar */
+#nav-tab
+{
+    border: 0px !important;
+}
+
+/* Style for each individual tab on the nav bar */
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active
+{
+    background-color: red;
+    color: #950505;
+    width: 33.3%;
+    border: 0px;
+}
+
+/* Style for the video header */
+header {
+    position: relative;
+    background-color: #000000;
+    height: 75vh;
+    min-height: 25rem;
+    width: 100%;
+    overflow: hidden;
+}
+
+    header video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        z-index: 0;
+        -ms-transform: translateX(-50%) translateY(-50%);
+        -moz-transform: translateX(-50%) translateY(-50%);
+        -webkit-transform: translateX(-50%) translateY(-50%);
+        transform: translateX(-50%) translateY(-50%);
+    }
+
+    header .container {
+        position: relative;
+        z-index: 2;
+    }
+
+    header .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: #000000;
+        opacity: 0.5;
+        z-index: 1;
+    }
+
+.lds-ripple 
+{
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin-top: 20px;
+    float: left;
+}
+
+    .lds-ripple div {
+        position: absolute;
+        border: 4px solid red;
+        opacity: 1;
+        border-radius: 50%;
+        animation: lds-ripple 2s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+    }
+
+        .lds-ripple div: nth-child(2) {
+            animation-delay: -0.5s;
+        }
+
+@keyframes lds-ripple {
+    0% {
+        top: 36px;
+        left: 36px;
+        width: 0;
+        height: 0;
+        opacity: 1;
+    }
+
+    100% {
+        top: 0px;
+        left: 0px;
+        width: 72px;
+        height: 72px;
+        opacity: 0;
+    }
+}
+
+/* Style for h2 tags */
+h2 
+{
+    font-size: 6rem;
+    font-family: 'Bebas Neue', cursive;
+}
+
+/* Style for h3 tags */
+h3 
+{
+    color: #c70909;
+    font-weight: bold;
+    font-size: 40px;
+    font-family: 'Bebas Neue', cursive;
+}
+
+/* Style for paragraph tabs */
+p
+{
+    color: #FFFFFF;
+    font-size: 30px;
+    font-family: 'Open Sans Condensed', cursive;
+    text-transform: uppercase;
+}
+
+/* Style for the container on the homepage to hold the about NCOV and Twitter window*/
+#containerRows 
+{
+    padding-top: 69px;
+    width: 80%;
+    margin: auto;
+}
+
+/* Make certain headings red */
+.redHeadings 
+{
+    text-transform: uppercase !important;
+    color: #c70909 !important;
+    font-family: "Bebas Neue", cursive;
+}
+
+/* Style for the body */
+body 
+{
+    height: 100%;
+    margin: 0;
+    font-family: Arial;
+    background-color: #181818;
+    overflow-x: hidden;
+}
+
+/* Style for the image that follows the cursor */
+#image 
+{
+    position: absolute;
+    z-index: 999;
+}
+
+/* Style for the Google map */
+#map 
+{
+    height: 500px;
+    width: 65%;
+    margin: 0 auto 0 auto;
+}
+
+/* Remove some of the annoying text on the Google map */
+.gmnoprint a, .gmnoprint span, .gmnoprint div 
+{
+    display: none;
+}
+
+/* Style for the go back to top of page button */
+.back-to-top 
+{
+    bottom: 25px;
+    display: none;
+}
+
+/* Style for the text that gets animated */
+.animated 
+{
+    float: left;
+    color: #FFFFFF;
+}
+/*Margin auto class*/
+
+.margin-auto{
+
+margin:auto;
+
+}
