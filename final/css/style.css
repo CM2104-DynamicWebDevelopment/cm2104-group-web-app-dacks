@@ -189,10 +189,15 @@ body
 }
 
 /* Style for the go back to top of page button */
-.back-to-top 
+.back-to-top-a
 {
     bottom: 25px;
     display: none;
+}
+
+.back-to-top
+{
+    float: right !important;
 }
 
 /* Style for the text that gets animated */

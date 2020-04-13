@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -36,18 +36,33 @@
     <title>NCOV Tracker</title>
 
     <!--
-       _______________                        |*\_/*|________
-      |  ___________  |     .-.     .-.      ||_/-\_|______  |
-      | |           | |    .****. .****.     | |           | |
-      | |   0   0   | |    .*****.*****.     | |   0   0   | |
-      | |     -     | |     .*********.      | |     -     | |
-      | |   \___/   | |      .*******.       | |   \___/   | |
-      | |___     ___| |       .*****.        | |___________| |
-      |_____|\_/|_____|        .***.         |_______________|
-        _|__|/ \|_|_.............*.............._|________|_
-       / ********** \                          / ********** \
-     /  ************  \                      /  ************  \
-    -->
+             ___
+          .-*)) `*-.
+         /*  ((*   *'.
+        |   *))  *   *\
+        | *  ((*   *  /
+         \  *))  *  .'
+          '-.((*_.-'          ,---------------------------,
+                              |  /---------------------\  |
+                              | |                       | |
+                              | |     Type 'ncov'       | |
+                              | |      in under 1.5s    | |
+                              | |       for easter egg  | |
+                              | |                       | |
+                              |  \_____________________/  |
+                              |___________________________|
+                            ,---\_____     []     _______/------,
+                          /         /______________\           /|
+                        /___________________________________ /  | ___
+                        |                                   |   |    )
+                        |  _ _ _                 [-------]  |   |   (
+                        |  o o o                 [-------]  |  /    _)_
+                        |__________________________________ |/     /  /
+                    /-------------------------------------/|      ( )/
+                  /-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/ /
+                /-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/ /
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        -->
 </head>
 
 <!-- Start of body -->
@@ -89,7 +104,6 @@
         </div>
     </div>
     <!-- End of nav bar -->
-
     <!-- Create a container to display each tab in -->
     <div class="tab-content py-3 px-3 px-sm-0 d-flex justify-content-center" id="nav-tabContent">
 
@@ -112,7 +126,6 @@
                 </div>
             </div>
             <!-- End flash -->
-
             <!-- Container to store about NCOV and tweets -->
             <div class="container-fluid">
                 <div class="row" id="containerRows">
@@ -125,26 +138,25 @@
 
                     </div>
                     <!-- End of about NCOV column -->
-
                     <!-- Twitter column -->
                     <div class="col-6">
                         <!-- Twitter title -->
-                        <h3 class="text-center"><img src="https://www.freeiconspng.com/uploads/red-spot-light-png-6.png" width="30px;"> LIVE News Updates<br>
-                          <!-- Twitter iframe -->
-							<a class="twitter-timeline" width="50%" data-height="540" data-theme="dark" href="https://twitter.com/COVID19UPDATE?ref_src=twsrc%5Etfw">Tweets by COVID19UPDATE</a></h3>
+                        <h3 class="text-center">
+                            <img src="https://www.freeiconspng.com/uploads/red-spot-light-png-6.png" width="30px;"> LIVE News Updates<br>
+                            <!-- Twitter iframe -->
+                            <a class="twitter-timeline" width="50%" data-height="540" data-theme="dark" href="https://twitter.com/COVID19UPDATE?ref_src=twsrc%5Etfw">Tweets by COVID19UPDATE</a>
+                        </h3>
                         <script async src="https://platform.twitter.com/widgets.js"></script>
                     </div>
                     <!-- End of Twitter column -->
                 </div>
             </div>
             <!-- End of container -->
-
             <!-- Live map heading -->
             <div class="d-flex justify-content-center">
                 <h2 class="animated flash delay-2s redHeadings">Coronavirus Live Map</h2>
             </div>
             <!-- End of live map heading -->
-
             <!-- The Google map -->
             <div id="map" class="d-flex align-items-center"></div>
             <br>
@@ -152,10 +164,9 @@
 
             <!-- Google maps API - uses async and defer to allow the parsing of the HTML to continue while the script downloads -->
             <!--<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRFhUZw7jPcsEiL_OcgfKXrfhbKVMBlzE&callback=initMap" type="text/javascript"></script>-->
-			<script async defer src="https://maps.googleapis.com/maps/api/js?key=0&callback=initMap" type="text/javascript"></script>
+            <script async defer src="https://maps.googleapis.com/maps/api/js?key=0&callback=initMap" type="text/javascript"></script>
         </div>
         <!-- End of tab content for the homepage -->
-
         <!-- Tab content for the timeline page, currently hardcoded but will be loaded from db later.-->
         <div class="tab-pane fade show" id="nav-timeline" role="tabpanel" aria-labelledby="nav-timeline-tab">
             <!-- The timeline -->
@@ -241,7 +252,6 @@
             </div>
         </div>
         <!-- End of tab content for the timeline page -->
-
         <!-- Tab content for the stay safe and symptoms page -->
         <div class="tab-pane fade show" id="nav-staysafe" role="tabpanel" aria-labelledby="nav-staysafe-tab">
             <!-- Create a container in the center of the page -->
@@ -257,7 +267,6 @@
                     <p class="text-justify">Headaches</p>
                 </div>
                 <!-- End of symptoms column -->
-
                 <!-- Prevention column -->
                 <div class="col">
                     <h1 class="display-4 redHeadings">Prevention</h1>
@@ -274,7 +283,7 @@
     </div>
 
     <!-- Back to top button -->
-    <a id="back-to-top"><img src="img/iconfinder_Arrow_Drop_Up_1063880.png" /></a>
+    <a id="back-to-top-a"><img id="back-to-top" src="img/iconfinder_Arrow_Drop_Up_1063880.png" /></a>
 
     <!-- Footer with copyright-->
     <footer class="page-footer font-small gray">
