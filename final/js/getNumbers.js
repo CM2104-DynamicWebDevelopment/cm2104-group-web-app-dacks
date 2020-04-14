@@ -11,12 +11,10 @@ $(document).ready(function()
 	$.getJSON('https://kalzeo.pythonanywhere.com/api/stats/', function(data)
 	{
 		// Store the stats of the Coronavirus in their respected variables
-		total = data[0]["totalCases"];
+		total = data[0].totalCases;
 
 		// Append the total to the number of infected string
 		$("#infectedTotal").append(total);
-
-		suspected = data[0].suspectedCases;
 		cured = data[0].curedCases;
 		dead = data[0].totalDead;
 	});
