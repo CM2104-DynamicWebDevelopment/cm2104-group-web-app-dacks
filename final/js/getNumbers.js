@@ -3,7 +3,6 @@ var totalInfected;
 var suspected;
 var cured;
 var dead;
-var severe;
 
 // Run once the page DOM is ready to execute JS
 $(document).ready(function()
@@ -20,6 +19,5 @@ $(document).ready(function()
 		suspected = data[0].suspectedCases;
 		cured = data[0].curedCases;
 		dead = data[0].totalDead;
-		severe = data[0].severeCases;
 	});
 });
