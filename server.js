@@ -1,3 +1,9 @@
+// Enter the below commands to set up and use the server:
+// > npm init
+// > npm install express
+// > npm install twitter
+// > npm start
+
 var express = require('express'); // sudo npm install express -g
 var app = express();
 
