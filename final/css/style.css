@@ -191,15 +191,19 @@ body
 }
 
 /* Style for the go back to top of page button */
-#back-to-top-a {
+#back-to-top-a
+{
     margin-top: -25px;
     float: right;
 
 }
 
-/* Style for the text that gets animated */
-.animated 
+#twitterProperties
 {
+    width: 50%;
+}
+/* Style for the text that gets animated */
+.animated {
     float: left;
     color: #FFFFFF;
 }
