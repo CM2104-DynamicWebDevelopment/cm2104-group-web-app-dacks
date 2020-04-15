@@ -4,7 +4,7 @@ var input = "";
 // Enable the easter egg
 function enableEasterEgg()
 {
-    alert("Congratulations, your have found the easter egg!\n\nYou mouse cursor will now turn into a human and will get chased by a virus when moved.\n\nPress any key to stop.");
+    alert("Congratulations, you've found the easter egg!\n\nYour mouse cursor will turn into a human and will get followed by a virus when moved.\n\nPress any key to stop.");
     $('*').css('cursor', 'url(img/human.png),auto');
     $('#image').show();
 
