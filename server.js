@@ -4,12 +4,16 @@
 // > npm install mongodb@2.2.33
 // > npm install express
 // > npm install twitter
+// > npm install ejs
 // > npm start
 
 const MongoClient = require('mongodb').MongoClient; // npm install mongodb@2.2.33
 const url = "mongodb://localhost:27017/";
 const express = require('express'); // sudo npm install express -g
 const app = express();
+
+// set the view engine to ejs
+app.set('view engine', 'ejs');
 
 var Twitter = require('twitter'); // npm install twitter
 
@@ -95,6 +99,12 @@ app.get('/showtimeline', function(req, res)
          }
          res.send(output);
      });
+});
+
+// index page
+app.get('/', function(req, res)
+{
+    res.render('pages/index');
 });
 
 // Include all the files for the final folder
