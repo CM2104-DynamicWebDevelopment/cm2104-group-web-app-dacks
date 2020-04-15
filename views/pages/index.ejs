@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head') %>
+</head>
+
+<!-- Start of body -->
+
+<body>
+
+    <!-- Virus image that follows the cursor -->
+    <div id="image">
+        <img src="img/virus.png" alt="virus">
+    </div>
+
+    <!-- Video header that starts a video automatically and loops it -->
+    <header>
+        <div class="overlay"></div>
+        <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+            <source src="https://www.sandwichmelody.com/wp-content/uploads/2020/01/video2.mp4" type="video/mp4">
+        </video>
+
+        <!-- Align a title in the middle of video header -->
+        <div class="container h-100">
+            <div class="d-flex h-100 text-center align-items-center">
+                <div class="w-100 text-white">
+                    <h2><span class="letters">Coronavirus live map</span></h2>
+                    <p class="redHeadings">THE UNOFFICIAL VIRUS TRACKER</p>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- End of video header -->
+
+    <br>
+    <br>
+    <!-- Nav bar -->
+    <%- include('../partials/navbar') %>
+    <!-- End of nav bar -->
+    
+    <!-- Create a container to display each tab in -->
+    <div class="tab-content py-3 px-3 px-sm-0 d-flex justify-content-center" id="nav-tabContent">
+
+        <!-- Tab content for the homepage -->
+        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+
+            <!-- Flash the text for the infected total -->
+            <div class="flash">
+                <div class="row" id="infectedRow">
+                    <div class="margin-auto">
+                        <div class="col">
+                            <div class="lds-ripple">
+                                <div></div>
+                                <div></div>
+                            </div>
+
+                            <h2 class="animated flash delay-2s" id="infectedTotal">INFECTED TOTAL: </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End flash -->
+            <!-- Container to store about NCOV and tweets -->
+            <div class="container-fluid">
+                <div class="row" id="containerRows">
+                    <!-- About NCOV column -->
+                    <div class="col-6">
+                        <h3 class="text-center redHeadings">Novel coronavirus (2019-nCoV)</h3>
+                        <br>
+                        <p class="text-justify">Coronaviruses are a large family of viruses that can cause respiratory illnesses such as the common cold, according to the Centers for Disease Control and Prevention (CDC). Most people get infected with coronaviruses at one point in their lives, but symptoms are typically mild to moderate. In some cases, the viruses can cause lower-respiratory tract illnesses<span><p>such as pneumonia and bronchitis. - https://www.livescience.com</p></span></p>
+                        <br>
+
+                    </div>
+                    <!-- End of about NCOV column -->
+                    <!-- Twitter column -->
+                    <div class="col-6">
+                        <!-- Twitter title -->
+                        <h3 class="text-center">
+                            <img src="https://www.freeiconspng.com/uploads/red-spot-light-png-6.png" width="30px;"> LIVE News Updates<br>
+                            <!-- Twitter iframe -->
+                            <a class="twitter-timeline" id="twitterProperties" data-theme="dark" data-height="540" data-chrome="nofooter" href="https://twitter.com/Corona_Update_?ref_src=twsrc%5Etfw">Tweets by Corona_Update_</a>
+                            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                        </h3>
+                    </div>
+                    <!-- End of Twitter column -->
+
+                </div>
+            </div>
+            <!-- End of container -->
+            <!-- Live map heading -->
+            <div class="d-flex justify-content-center">
+                <h2 class="animated flash delay-2s redHeadings">Coronavirus Live Map</h2>
+            </div>
+            <!-- End of live map heading -->
+            <!-- The Google map -->
+            <div id="map" class="d-flex align-items-center"></div>
+            <br>
+            <br>
+
+            <!-- Google maps API - uses async and defer to allow the parsing of the HTML to continue while the script downloads -->
+            <!--<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRFhUZw7jPcsEiL_OcgfKXrfhbKVMBlzE&callback=initMap" type="text/javascript"></script>-->
+            <script async defer src="https://maps.googleapis.com/maps/api/js?key=0&callback=initMap" type="text/javascript"></script>
+        </div>
+        <!-- End of tab content for the homepage -->
+        <!-- Tab content for the timeline page, currently hardcoded but will be loaded from db later.-->
+        <div class="tab-pane fade show" id="nav-timeline" role="tabpanel" aria-labelledby="nav-timeline-tab">
+            <!-- The timeline -->
+            <div class="timeline">
+                <%- output %>
+            </div>
+        </div>
+        <!-- End of tab content for the timeline page -->
+        <!-- Tab content for the stay safe and symptoms page -->
+        <div class="tab-pane fade show" id="nav-staysafe" role="tabpanel" aria-labelledby="nav-staysafe-tab">
+            <!-- Create a container in the center of the page -->
+            <div class="container d-flex h text-center align-items-center">
+
+                <!-- Symptoms column -->
+                <div class="col">
+                    <h1 class="display-4 redHeadings">Symtpoms</h1>
+                    <p class="text-justify">Chesty Cough, with pain from coughing</p>
+                    <p class="text-justify">High Temperature and feeling hot all of the time</p>
+                    <p class="text-justify">Feeling tired after short excercise such as walking</p>
+                    <p class="text-justify">Sneezing often</p>
+                    <p class="text-justify">Headaches</p>
+                </div>
+                <!-- End of symptoms column -->
+                <!-- Prevention column -->
+                <div class="col">
+                    <h1 class="display-4 redHeadings">Prevention</h1>
+                    <p class="text-justify">Always cover moouth and nose when sneezing</p>
+                    <p class="text-justify">Avoid large gathering in places where coronavirus has been found</p>
+                    <p class="text-justify">Avoid travelling to regions and countries where coronavirus has been found</p>
+                    <p class="text-justify">Avoid contact with suspected infected victims</p>
+                </div>
+                <!-- End of prevention column -->
+            </div>
+            <!-- End of container -->
+        </div>
+        <!-- End of tab content for the stay safe and symptoms page -->
+    </div>
+
+    <!-- Back to top button -->
+    <a id="back-to-top-a"><img id="back-to-top" src="img/iconfinder_Arrow_Drop_Up_1063880.png" /></a>
+
+    <!-- Footer with copyright-->
+    <%- include('../partials/footer') %>
+    <!-- End of footer -->
+
+</body>
+<!-- End of body -->
+
+</html>
