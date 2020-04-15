@@ -96,8 +96,7 @@ app.get("/showtimeline", function (req, res)
                            <div class='content-t'>
                                <h2 class='redHeadings'>${result[i].date}</h2>
                                <p>${result[i].text}</p>
-                           </div>
-                       </div>`;
+                           </div>`;
         }
         res.send(output);
      });
@@ -121,8 +120,7 @@ app.get("/", function (req, res) {
                            <div class='content-t'>
                                <h2 class='redHeadings'>${result[i].date}</h2>
                                <p>${result[i].text}</p>
-                           </div>
-                       </div>`;
+                           </div>`;
         }
         // Render the index and pass the output to it
         res.render("pages/index", {
