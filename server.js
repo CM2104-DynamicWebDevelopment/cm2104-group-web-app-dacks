@@ -104,7 +104,31 @@ app.get('/showtimeline', function(req, res)
 // index page
 app.get('/', function(req, res)
 {
-    res.render('pages/index');
+    var output = ""
+    
+    // Find the timeline collection and convert it to an array
+    db.collection('timeline').find().toArray(function(err, result) 
+    {
+        // If it can't find the collection throw an error
+        if (err) throw err;
+        
+        // Loop through the entire collection array and add it to the output
+        for (var i = 0; i < result.length; i++) 
+        {
+            var pos = i % 2 == 1 ? "right" : "left"
+            output += `<div class='container-t ${pos}'
+                           <div class='content-t'>
+                           <h2 class='redHeadings'>${result[i].date}</h2>
+                           <p>${result[i].text}</p>
+                           </div>`
+         }
+      
+         // Render the index and pass the output to it
+         res.render('pages/index', 
+         {
+             output: output
+         });
+     });
 });
 
 // Include all the files for the final folder
