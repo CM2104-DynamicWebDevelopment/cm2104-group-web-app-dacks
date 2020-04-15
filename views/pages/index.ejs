@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -6,7 +7,6 @@
 </head>
 
 <!-- Start of body -->
-
 <body>
 
     <!-- Virus image that follows the cursor -->
@@ -23,12 +23,8 @@
 
         <!-- Align a title in the middle of video header -->
         <div class="container h-100">
-            <div class="d-flex h-100 text-center align-items-center">
-                <div class="w-100 text-white">
-                    <h2><span class="letters">Coronavirus live map</span></h2>
-                    <p class="redHeadings">THE UNOFFICIAL VIRUS TRACKER</p>
-                </div>
-            </div>
+            <!-- Template for the video text -->
+            <%- include('../partials/videoText') %>
         </div>
     </header>
     <!-- End of video header -->
@@ -37,93 +33,58 @@
     <br>
     <!-- Nav bar -->
     <%- include('../partials/navbar') %>
-    <!-- End of nav bar -->
-    
-    <!-- Create a container to display each tab in -->
-    <div class="tab-content py-3 px-3 px-sm-0 d-flex justify-content-center" id="nav-tabContent">
+        <!-- End of nav bar -->
 
-        <!-- Tab content for the homepage -->
-        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+        <!-- Create a container to display each tab in -->
+        <div class="tab-content py-3 px-3 px-sm-0 d-flex justify-content-center" id="nav-tabContent">
+            <!-- Tab content for the homepage -->
+            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
 
-            <!-- Flash the text for the infected total -->
-            <div class="flash">
-                <div class="row" id="infectedRow">
-                    <div class="margin-auto">
-                        <div class="col">
-                            <div class="lds-ripple">
-                                <div></div>
-                                <div></div>
-                            </div>
+                <!-- Flash the text for the infected total -->
+                <%- include('../partials/infectedTotal') %>
+                    <!-- End flash -->
 
-                            <h2 class="animated flash delay-2s" id="infectedTotal">INFECTED TOTAL: </h2>
+                    <!-- Container to store about NCOV and tweets -->
+                    <div class="container-fluid">
+                        <div class="row" id="containerRows">
+                            <!-- About NCOV Template -->
+                            <%- include('../partials/aboutNcov') %>
+
+                            <!-- Twitter Publish Template -->
+                            <%- include('../partials/twitterPublish') %>
                         </div>
                     </div>
+                    <!-- End of container -->
+
+                    <!-- Google Map -->
+                    <%- include('../partials/googlemap') %>
+            </div>
+            <!-- End of tab content for the homepage -->
+
+            <!-- Tab content for the timeline page, data passed in from db -->
+            <div class="tab-pane fade show" id="nav-timeline" role="tabpanel" aria-labelledby="nav-timeline-tab">
+                <!-- The timeline -->
+                <div class="timeline">
+                    <!-- Template to show timeline from database -->
+                    <!-- To view the output from the db you can also go to the /showtimeline route -->
+                    <%- output %>
                 </div>
             </div>
-            <!-- End flash -->
-            <!-- Container to store about NCOV and tweets -->
-            <div class="container-fluid">
-                <div class="row" id="containerRows">
-                    <!-- About NCOV column -->
-                    <div class="col-6">
-                        <h3 class="text-center redHeadings">Novel coronavirus (2019-nCoV)</h3>
-                        <br>
-                        <p class="text-justify">Coronaviruses are a large family of viruses that can cause respiratory illnesses such as the common cold, according to the Centers for Disease Control and Prevention (CDC). Most people get infected with coronaviruses at one point in their lives, but symptoms are typically mild to moderate. In some cases, the viruses can cause lower-respiratory tract illnesses<span><p>such as pneumonia and bronchitis. - https://www.livescience.com</p></span></p>
-                        <br>
+            <!-- End of tab content for the timeline page -->
 
-                    </div>
-                    <!-- End of about NCOV column -->
-                    <!-- Twitter column -->
-                    <div class="col-6">
-                        <!-- Twitter title -->
-                        <h3 class="text-center">
-                            <img src="https://www.freeiconspng.com/uploads/red-spot-light-png-6.png" width="30px;"> LIVE News Updates<br>
-                            <!-- Twitter iframe -->
-                            <a class="twitter-timeline" id="twitterProperties" data-theme="dark" data-height="540" data-chrome="nofooter" href="https://twitter.com/Corona_Update_?ref_src=twsrc%5Etfw">Tweets by Corona_Update_</a>
-                            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-                        </h3>
-                    </div>
-                    <!-- End of Twitter column -->
-
-                </div>
+            <!-- Tab content for the stay safe and symptoms page -->
+            <div class="tab-pane fade show" id="nav-staysafe" role="tabpanel" aria-labelledby="nav-staysafe-tab">
+                <%- include('../partials/staysafe') %>
             </div>
-            <!-- End of container -->
-            <!-- Live map heading -->
-            <div class="d-flex justify-content-center">
-                <h2 class="animated flash delay-2s redHeadings">Coronavirus Live Map</h2>
-            </div>
-            <!-- End of live map heading -->
-            <!-- The Google map -->
-            <div id="map" class="d-flex align-items-center"></div>
-            <br>
-            <br>
-
-            <!-- Google maps API - uses async and defer to allow the parsing of the HTML to continue while the script downloads -->
-            <!--<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRFhUZw7jPcsEiL_OcgfKXrfhbKVMBlzE&callback=initMap" type="text/javascript"></script>-->
-            <script async defer src="https://maps.googleapis.com/maps/api/js?key=0&callback=initMap" type="text/javascript"></script>
+            <!-- End of tab content for the stay safe and symptoms page -->
         </div>
-        <!-- End of tab content for the homepage -->
-        <!-- Tab content for the timeline page, currently hardcoded but will be loaded from db later.-->
-        <div class="tab-pane fade show" id="nav-timeline" role="tabpanel" aria-labelledby="nav-timeline-tab">
-            <!-- The timeline -->
-            <div class="timeline">
-                <%- output %>
-            </div>
-        </div>
-        <!-- End of tab content for the timeline page -->
-        <!-- Tab content for the stay safe and symptoms page -->
-        <div class="tab-pane fade show" id="nav-staysafe" role="tabpanel" aria-labelledby="nav-staysafe-tab">
-             <%- include('../partials/staysafe') %>
-        </div>
-        <!-- End of tab content for the stay safe and symptoms page -->
-    </div>
 
-    <!-- Back to top button -->
-    <a id="back-to-top-a"><img id="back-to-top" src="img/iconfinder_Arrow_Drop_Up_1063880.png" /></a>
+        <!-- Back to top button -->
+        <a id="back-to-top-a"><img id="back-to-top" src="img/iconfinder_Arrow_Drop_Up_1063880.png" /></a>
 
-    <!-- Footer with copyright-->
-    <%- include('../partials/footer') %>
-    <!-- End of footer -->
+        <!-- Template to show footer with copyright-->
+        <%- include('../partials/footer') %>
+            <!-- End of footer -->
 
 </body>
 <!-- End of body -->
