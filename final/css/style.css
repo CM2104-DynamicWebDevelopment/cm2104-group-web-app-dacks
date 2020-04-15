@@ -20,6 +20,12 @@
     width: 33.3%;
 }
 
+/* Red dot next to Twitter heading */
+#liveUpdatePhoto
+{
+    width: 30px;
+}
+
 /* Style for all the tabs on the nav bar */
 #nav-tab
 {
