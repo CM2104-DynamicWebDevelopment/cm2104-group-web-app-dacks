@@ -90,7 +90,7 @@ function initMap()
 function placeMarker(locationDetails, latLng)
 {
     // Create the marker and set it's options
-    var marker = new google.maps.Marker({ position: { lat: latLng.lat, lng: latLng.lng }, map: map, icon: '../prototype/img/markericon.png' });
+    var marker = new google.maps.Marker({ position: { lat: latLng.lat, lng: latLng.lng }, map: map, icon: '../img/markericon.png' });
 
     // The content for the infoWindow when the marker gets clicked
     var info = `Location: ${locationDetails.name}<hr>Confirmed Infections: ${locationDetails.confirmed}<br>People Cured: ${locationDetails.cured}<br>Deaths Caused: ${locationDetails.dead}`;
