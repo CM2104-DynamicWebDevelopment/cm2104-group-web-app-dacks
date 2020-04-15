@@ -7,37 +7,38 @@
 // > npm install ejs
 // > npm start
 
-const MongoClient = require('mongodb').MongoClient; // npm install mongodb@2.2.33
+const MongoClient = require("mongodb").MongoClient; // npm install mongodb@2.2.33
 const url = "mongodb://localhost:27017/";
-const express = require('express'); // sudo npm install express -g
+const express = require("express"); // sudo npm install express -g
 const app = express();
 
 // set the view engine to ejs
-app.set('view engine', 'ejs');
+app.set("view engine", "ejs");
 
-var Twitter = require('twitter'); // npm install twitter
+var db;
+var Twitter = require("twitter"); // npm install twitter
 
 // Create a Twitter client
 var client = new Twitter({
-  consumer_key: 'tOBOpXRWxDvqc6Dbvv8MLmnYQ',
-  consumer_secret: 'YPuSU6rKETHEtdVTqusE209Cl7DHHjop3JYXg3cATQAbMJC16x',
-  access_token_key: '1580455674-XGoXPCP7CzLFgYascjJONsJP2pAFZDHuVjUlOUa',
-  access_token_secret: '8WtYDRYCAuTieokrMc47yvz5YwBsvAjfaKzNiYlEloodl'
+    consumer_key: "tOBOpXRWxDvqc6Dbvv8MLmnYQ",
+    consumer_secret: "YPuSU6rKETHEtdVTqusE209Cl7DHHjop3JYXg3cATQAbMJC16x",
+    access_token_key: "1580455674-XGoXPCP7CzLFgYascjJONsJP2pAFZDHuVjUlOUa",
+    access_token_secret: "8WtYDRYCAuTieokrMc47yvz5YwBsvAjfaKzNiYlEloodl",
 });
 
-var db;
+
 
 // Connect to the MongoDB
-MongoClient.connect(url, function(err, database)
+MongoClient.connect(url, function (err, database) 
 {
     // If the db cant connect throw an error
-    if(err) throw err;
-    
+    if (err) throw err;
+
     db = database;
-    
+
     // Drop the current timeline collection
     db.collection("timeline").drop();
-    
+
     // Timeline data to be added to the collection
     var timelineData = [
         {date: "31ST DECEMBER 2019", text: "FIRST CASES OF A FLU LIKE ILLNESS HAVE BEEN REPORTED IN WUHAN."},
@@ -55,18 +56,19 @@ MongoClient.connect(url, function(err, database)
         {date: "25TH FEBRUARY 2020", text: "THE CDC IN THE USA WARN AMERICAN CITEZENS TO PREPARE FOR DISRUPTION AS A RESULT OF THE VIRUS."}
     ];
     
+
     // Insert the timeline data into the collection
-    db.collection("timeline").insertMany(timelineData, function(err, res)
+    db.collection("timeline").insertMany(timelineData, function (err, res) 
     {
-        if(err) throw err;
-    })
-}); 
+        if (err) throw err;
+    });
+});
 
 // Route to get JSON from tweets
-app.get('/covidtweets', function(req, res)
+app.get("/covidtweets", function (req, res) 
 {
-    var params = {screen_name: 'nodejs'};
-    client.get('https://api.twitter.com/1.1/search/tweets.json?q=corona%20virus%20updates&result_type=recent', params, function(error, tweets, response)
+    var params = { screen_name: "nodejs" };
+    client.get("https://api.twitter.com/1.1/search/tweets.json?q=corona%20virus%20updates&result_type=recent", params, function (error, tweets, response)
     {
         if (!error) 
         {
@@ -76,63 +78,62 @@ app.get('/covidtweets', function(req, res)
 });
 
 // Route to show the timeline returned from MongoDB
-app.get('/showtimeline', function(req, res)
+app.get("/showtimeline", function (req, res)
 {
-    var output = ""
-    
+    var output = "";
+
     // Find the timeline collection and convert it to an array
-    db.collection('timeline').find().toArray(function(err, result) 
+    db.collection("timeline").find().toArray(function (err, result) 
     {
         // If it can't find the collection throw an error
         if (err) throw err;
         
         // Loop through the entire collection array and add it to the output
-        for (var i = 0; i < result.length; i++) 
+        for (var i = 0; i < result.length; i++)
         {
-            var pos = i % 2 == 1 ? "right" : "left"
+            var pos = i % 2 == 1 ? "right" : "left";
             output += `<div class='container-t ${pos}'
                            <div class='content-t'>
-                           <h2 class='redHeadings'>${result[i].date}</h2>
-                           <p>${result[i].text}</p>
+                               <h2 class='redHeadings'>${result[i].date}</h2>
+                               <p>${result[i].text}</p>
                            </div>
-                           </div>`
-         }
-         res.send(output);
+                       </div>`;
+        }
+        res.send(output);
      });
 });
 
 // index page
-app.get('/', function(req, res)
-{
-    var output = ""
-    
+app.get("/", function (req, res) {
+    var output = "";
+
     // Find the timeline collection and convert it to an array
-    db.collection('timeline').find().toArray(function(err, result) 
+    db.collection("timeline").find().toArray(function (err, result) 
     {
         // If it can't find the collection throw an error
         if (err) throw err;
         
         // Loop through the entire collection array and add it to the output
-        for (var i = 0; i < result.length; i++) 
+        for (var i = 0; i < result.length; i++)
         {
-            var pos = i % 2 == 1 ? "right" : "left"
+            var pos = i % 2 == 1 ? "right" : "left";
             output += `<div class='container-t ${pos}'
                            <div class='content-t'>
-                           <h2 class='redHeadings'>${result[i].date}</h2>
-                           <p>${result[i].text}</p>
-                           </div>`
-         }
-      
-         // Render the index and pass the output to it
-         res.render('pages/index', 
-         {
-             output: output
+                               <h2 class='redHeadings'>${result[i].date}</h2>
+                               <p>${result[i].text}</p>
+                           </div>
+                       </div>`;
+        }
+        // Render the index and pass the output to it
+        res.render("pages/index", {
+            output: output
          });
-     });
+      });
 });
 
 // Include all the files for the final folder
-app.use(express.static('final'))
+app.use(express.static("final"));
 
 // Listen on port 8080
 app.listen(8080);
+
