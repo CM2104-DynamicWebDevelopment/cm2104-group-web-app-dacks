@@ -80,7 +80,7 @@ app.get("/covidtweets", function (req, res)
 // Route to show the timeline returned from MongoDB
 app.get("/showtimeline", function (req, res)
 {
-    var output = "";
+    var output = "<h1><u><i>Timeline Output From MongoDB</i></u></h1><br>";
 
     // Find the timeline collection and convert it to an array
     db.collection("timeline").find().toArray(function (err, result) 
