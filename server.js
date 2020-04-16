@@ -104,7 +104,7 @@ app.get("/showtimeline", function (req, res)
 
 // index page
 app.get("/", function (req, res) {
-    var output = "";
+    var timeline = "";
 
     // Find the timeline collection and convert it to an array
     db.collection("timeline").find().toArray(function (err, result) 
@@ -116,15 +116,49 @@ app.get("/", function (req, res) {
         for (var i = 0; i < result.length; i++)
         {
             var pos = i % 2 == 1 ? "right" : "left";
-            output += `<div class='container-t ${pos}'
+            timeline += `<div class='container-t ${pos}'
                            <div class='content-t'>
                                <h2 class='redHeadings'>${result[i].date}</h2>
                                <p>${result[i].text}</p>
                            </div>`;
         }
-        // Render the index and pass the output to it
-        res.render("pages/index", {
-            output: output
+        
+        // Render the index and pass the timeline from the db and various pieces of info to the index
+        res.render("pages/index", 
+        {
+            videoText: {heading: "Coronavirus live map",
+                        subheading: "THE UNOFFICIAL VIRUS TRACKER"},
+            
+            navBarHeadings: {home: "HOME",
+                             timeline: "TIMELINE",
+                             staysafe: "STAY SAFE"},
+            
+            timeline: timeline,
+            
+            infectedTotal: "INFECTED TOTAL: ",
+            
+            aboutNcov: {heading: "Novel coronavirus (2019-nCoV)",
+                        about: "Coronaviruses are a large family of viruses that can cause respiratory illnesses such as the common cold, according to the Centers for Disease Control and Prevention (CDC). Most people get infected with coronaviruses at one point in their lives, but symptoms are typically mild to moderate. In some cases, the viruses can cause lower-respiratory tract illnesses<span><p>such as pneumonia and bronchitis. - https://www.livescience.com"},
+            
+            twitter: {heading: "LIVE News Updates",
+                      tweetsby: "Tweets By Corona_Update_"},
+            
+            googleMaps: "Coronavirus Live Map",
+            
+            symtpomsData: {heading: "Symtpoms",
+                           s1: "Chesty Cough with Pain",
+                           s2: "High Temperature and Fever",
+                           s3: "Feeling Tired After Short Exercise Such as Walking",
+                           s4: "Sneezing",
+                           s5: "Headaches"},
+            
+            preventionData: {heading: "Prevention",
+                             p1: "Always Cover Mouth and Nose with Tissue Whilst Sneezing",
+                             p2: "Avoid Large Gatherings",
+                             p3: "Avoid Travelling To Countries/Regions Where COVID-19 Has Been Found",
+                             p4: "Avoid Contact with People Suspected of Infection"},
+            
+            copyright: "© 2020 Copyright: DACKS"
          });
       });
 });
