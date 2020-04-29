@@ -1,0 +1,39 @@
+<!-- Modal -->
+        <div class="modal fade" id="quizModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Stay Safe Quiz</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <u><%- quiz.question %></u><br><br>
+                <div class="col-xs-3 col-xs-offset-5">
+                   <div id="loadbar" style="display: none;">
+                      <div class="blockG" id="rotateG_01"></div>
+                      <div class="blockG" id="rotateG_02"></div>
+                      <div class="blockG" id="rotateG_03"></div>
+                      <div class="blockG" id="rotateG_04"></div>
+                      <div class="blockG" id="rotateG_05"></div>
+                      <div class="blockG" id="rotateG_06"></div>
+                      <div class="blockG" id="rotateG_07"></div>
+                      <div class="blockG" id="rotateG_08"></div>
+                  </div>
+              </div>
+                  
+              <div class="quiz" id="quiz" data-toggle="buttons">
+                   <label class="element-animation1 btn btn-lg btn-danger btn-block" id="ans1"><span class="btn-label"></span><%- quiz.q1 %></label>
+                   <label class="element-animation2 btn btn-lg btn-danger btn-block" id="ans2"><span class="btn-label"></span><%- quiz.q2 %></label>
+                   <label class="element-animation3 btn btn-lg btn-danger btn-block" id="ans3"><span class="btn-label"></span><%- quiz.q3 %></label>
+                   <label class="element-animation4 btn btn-lg btn-danger btn-block" id="ans4"><span class="btn-label"></span><%- quiz.q4 %></label>
+               </div>
+                  
+               <span id="answer" class="text-center"></span>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
