@@ -160,7 +160,7 @@ app.get("/", function (req, res) {
             
             copyright: "© 2020 Copyright: DACKS",
             
-            quiz: {question: "How far should you distance from others?",
+            quiz: {question: "Recommended Distance From Others?",
                   q1: "2 Metres",
                   q2: "No Distance",
                   q3: "1 Metre",
