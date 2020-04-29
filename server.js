@@ -158,7 +158,13 @@ app.get("/", function (req, res) {
                              p3: "Avoid Travelling To Countries/Regions Where COVID-19 Has Been Found",
                              p4: "Avoid Contact with People Suspected of Infection"},
             
-            copyright: "© 2020 Copyright: DACKS"
+            copyright: "© 2020 Copyright: DACKS",
+            
+            quiz: {question: "How far should you distance from others?",
+                  q1: "2 Metres",
+                  q2: "No Distance",
+                  q3: "1 Metre",
+                  q4: "3 Metres"}
          });
       });
 });
@@ -168,4 +174,3 @@ app.use(express.static("final"));
 
 // Listen on port 8080
 app.listen(8080);
-
