@@ -1,0 +1,20 @@
+{
+  "name": "cm2104-group-web-app-dacks",
+  "version": "1.0.0",
+  "description": "COVID-19 Tracker",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CM2104-DynamicWebDevelopment/cm2104-group-web-app-dacks.git"
+  },
+  "author": "DACKS",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CM2104-DynamicWebDevelopment/cm2104-group-web-app-dacks/issues"
+  },
+  "homepage": "https://github.com/CM2104-DynamicWebDevelopment/cm2104-group-web-app-dacks#readme"
+}
