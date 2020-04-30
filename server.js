@@ -203,7 +203,7 @@ app.get("/", function (req, res) {
                              p2: "Avoid Large Gatherings",
                              p3: "Avoid Travelling To Countries/Regions Where COVID-19 Has Been Found",
                              p4: "Avoid Contact with People Suspected of Infection",
-			     p5: "Recommended to Stay Atleast 2M From Others},
+			     p5: "Recommended to Stay Atleast 2M From Others"},
             
             // Copyright notice
             copyright: "© 2020 Copyright: DACKS",
