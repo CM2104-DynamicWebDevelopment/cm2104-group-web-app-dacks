@@ -3,7 +3,7 @@
 }
 
 .ui-widget-content {
-  color: white!important;
+  color: black!important;
   background-color: #292929;
 }
 
@@ -15,7 +15,7 @@
 }
 
 .ui-dialog {
-  height: 100px!important;
+  height: auto;
   width: 300px!important;
   top: 657.5px!important;
   left: 841px!important;
