@@ -609,9 +609,13 @@ label .btn-label {
     color: #fff;
 }
 
+.modal-header{
+    border:none
+}
 
-.modal-header{border:none}
-.modal-footer{border:none}
+.modal-footer{
+    border:none
+}
 
 .btn-primary {
     background-color: #000000 !important;
