@@ -89,7 +89,7 @@ MongoClient.connect(url, function (err, database)
 		{date: "22ND APRIL 2020", text: "NETHERLANDS BAN ALL MASS GATHERINGS UNTIL 1ST OF SEPTEMBER"},
 		{date: "23RD APRIL 2020", text: "PRESIDENT DONALD TRUMP RECOMMENDS CONSUMING DISENFECTENTS TO FIGHT THE VIRUS "},
 		{date: "27TH APRIL 2020", text: "US ANNOUNCE OVER 1 MILLION POSITIVE CASES OF CORONAVIRUS"},
-		{date: "29TH APRIL 2020", text: "OVER 3 MILLION GLOBAL CASES OF CORONAVIRUS, WITH 219,000 DEATHS"},
+		{date: "29TH APRIL 2020", text: "OVER 3 MILLION GLOBAL CASES OF CORONAVIRUS, WITH 219,000 DEATHS"}
     ];
     
 
@@ -225,15 +225,4 @@ app.use(express.static("final"));
 
 // Listen on port 8080
 app.listen(8080);
-© 2020 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Help
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
+
