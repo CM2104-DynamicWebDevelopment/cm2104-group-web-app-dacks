@@ -1,8 +1,8 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+    <!-- Include the head EJS file and insert it into the template -->
     <%- include('../partials/head') %>
 </head>
 
@@ -23,7 +23,7 @@
 
         <!-- Align a title in the middle of video header -->
         <div class="container h-100">
-            <!-- Template for the video text -->
+            <!-- Include the videoText EJS file and insert it into the template -->
             <%- include('../partials/videoText') %>
         </div>
     </header>
@@ -31,7 +31,7 @@
 
     <br>
     <br>
-    <!-- Nav bar -->
+    <!-- Include the navbar EJS file and insert it into the template -->
     <%- include('../partials/navbar') %>
         <!-- End of nav bar -->
 
@@ -41,23 +41,24 @@
             <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
 
                 <!-- Flash the text for the infected total -->
+                <!-- Include the statistics and infectedTotal EJS files and insert them into their templates -->
                 <%- include('../partials/statistics') %>
                 <%- include('../partials/infectedTotal') %>
-                    <!-- End flash -->
+                <!-- End flash -->
 
                     <!-- Container to store about NCOV and tweets -->
                     <div class="container-fluid">
                         <div class="row" id="containerRows">
-                            <!-- About NCOV Template -->
+                            <!-- Include the aboutNcov EJS file and insert it into the template -->
                             <%- include('../partials/aboutNcov') %>
 
-                            <!-- Twitter Publish Template -->
+                            <!-- Include the twitterPublish EJS file and insert it into the template -->
                             <%- include('../partials/twitterPublish') %>
                         </div>
                     </div>
                     <!-- End of container -->
 
-                    <!-- Google Map -->
+                    <!-- Include the googlemap EJS file and insert it into the template -->
                     <%- include('../partials/googlemap') %>
             </div>
             <!-- End of tab content for the homepage -->
@@ -75,25 +76,28 @@
 
             <!-- Tab content for the stay safe and symptoms page -->
             <div class="tab-pane fade show" id="nav-staysafe" role="tabpanel" aria-labelledby="nav-staysafe-tab">
+                <!-- Include the staysafe EJS file and insert it into the template -->
                 <%- include('../partials/staysafe') %>
             </div>
             <!-- End of tab content for the stay safe and symptoms page -->
         </div>
+        
         <!-- pop up message -->
-        <div id="dialog" title="Basic dialog">
+        <div id="dialog">
             <p id="pop"></p>
         </div>
+        
         <!-- Back to top button -->
         <a id="back-to-top-a"><img id="back-to-top" src="img/iconfinder_Arrow_Drop_Up_1063880.png" /></a>
 
-        <!-- Template for the contact modal -->
+        <!-- Include the contact EJS file and insert it into the template -->
         <%- include('../partials/contact') %>
     
-        <!-- Template to show footer with copyright-->
+        <!-- Include the footer EJS file and insert it into the template -->
         <%- include('../partials/footer') %>
         <!-- End of footer -->
         
-        <!-- Template for the quiz modal -->
+        <!-- Include the quiz EJS file and insert it into the template -->
         <%- include('../partials/quiz') %>
 </body>
 <!-- End of body -->
