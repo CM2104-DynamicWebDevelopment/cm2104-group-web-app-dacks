@@ -597,3 +597,9 @@ label .btn-label {
 {
     font-size: 15px;
 }
+
+
+.modal-content{    
+    background: #252525;
+    color: white;
+}
