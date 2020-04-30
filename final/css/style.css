@@ -381,6 +381,7 @@ label .btn-label {
 
 .modal-body {
     text-align: center !important;
+    line-height: 3.5rem;
 }
 
 #loadbar {
