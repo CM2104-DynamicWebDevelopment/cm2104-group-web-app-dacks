@@ -374,10 +374,6 @@ label .btn-label {
     color: inherit
 }
 
-.modal-body {
-    min-height: 205px
-}
-
 #loadbar {
     position: absolute;
     width: 62px;
@@ -581,9 +577,11 @@ label .btn-label {
     }
 }
 
-.quiz
+.quiz 
 {
     margin-bottom: 10px;
+    margin-left: 12.5px;
+    width: 90%;
 }
 
 #answer
