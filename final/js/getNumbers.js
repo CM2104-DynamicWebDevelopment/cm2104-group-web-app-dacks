@@ -17,5 +17,7 @@ $(document).ready(function()
 		$("#infectedTotal").append(total);
 		cured = data[0].curedCases;
 		dead = data[0].totalDead;
+
+        $('#statisticsModal .modal-body').append(`Confirmed Cases: ${total}<br>Confirmed Deaths: ${dead}<br>Confirmed Cured: ${cured}`);
 	});
 });
