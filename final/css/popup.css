@@ -1,41 +1,34 @@
-#snackbar {
-  visibility: hidden;
-  min-width: 250px;
-  margin-left: -125px;
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  border-radius: 2px;
-  padding: 16px;
-  position: fixed;
-  z-index: 1;
-  left: 50%;
-  bottom: 30px;
-  font-size: 17px;
+.ui-widget-content p {
+  color: white;
 }
 
-#snackbar.show {
-  visibility: visible;
-  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
-  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+.ui-widget-content {
+  color: white!important;
+  background-color: #292929;
 }
 
-@-webkit-keyframes fadein {
-  from {bottom: 0; opacity: 0;} 
-  to {bottom: 30px; opacity: 1;}
+.ui-widget-header {
+  border: 0px solid #dddddd;
+  background: #900000;
+  color: white;
+  text-transform: uppercase;
 }
 
-@keyframes fadein {
-  from {bottom: 0; opacity: 0;}
-  to {bottom: 30px; opacity: 1;}
+.ui-dialog {
+  height: 100px!important;
+  width: 300px!important;
+  top: 657.5px!important;
+  left: 841px!important;
+  display: block;
 }
 
-@-webkit-keyframes fadeout {
-  from {bottom: 30px; opacity: 1;} 
-  to {bottom: 0; opacity: 0;}
+.ui-widget.ui-widget-content {
+  border: 0px solid #c5c5c5;
 }
 
-@keyframes fadeout {
-  from {bottom: 30px; opacity: 1;}
-  to {bottom: 0; opacity: 0;}
+.ui-dialog-content .ui-widget-content {
+  width: auto;
+  min-height: 58px!important;
+  max-height: none;
+  height: auto;
 }
