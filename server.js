@@ -192,7 +192,9 @@ app.get("/", function (req, res) {
             
             close: "Close",
             
-            statistics: "Statistics"
+            statistics: "Statistics",
+            
+            testKnowlegde: "Test your stay safe knowledge by clicking "
         });
       });
 });
