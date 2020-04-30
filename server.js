@@ -7,22 +7,25 @@
     set of steps.
     
     -- STEPS TO INSTALL IF THERE'S NO PACKAGE.JSON FILE --
-    1. Open the folder location of 'cm2104-group-web-app-dacks' on your codio terminal.
-    2. Enter 'npm init' into the terminal.
+    1. Download MongoDB from Tools > Install Software > MongoDB
+    2. Open the folder location of 'cm2104-group-web-app-dacks' on your codio terminal.
+    3. Enter 'npm init' into the terminal.
        Set the description to 'COVID-19 Tracker' and the author to 'DACKS'.
-    3. Enter 'npm install mongodb@2.2.33' into the terminal.
-    4. Enter 'npm install express' into the terminal. 
-    5. Enter 'npm install ejs' into the terminal.
-    6. Enter 'npm install twitter' into the terminal.
-    7. Enter 'npm start' into the terminal to start the server.
+    4. Enter 'npm install mongodb@2.2.33' into the terminal.
+    5. Enter 'npm install express' into the terminal. 
+    6. Enter 'npm install ejs' into the terminal.
+    7. Enter 'npm install twitter' into the terminal.
+    8. Enter 'npm start' into the terminal to start the server.
     
     -- STEPS TO INSTALL IF THERE IS PACKAGE.JSON FILE --
-    1. Open the folder location of 'cm2104-group-web-app-dacks' on your codio terminal.
-    2. Enter 'npm init' into the terminal.
+    1. Download MongoDB from Tools > Install Software > MongoDB
+    2. Open the folder location of 'cm2104-group-web-app-dacks' on your codio terminal.
+    3. Enter 'npm init' into the terminal.
        Keep pressing enter and the packages.json info will be inserted.
-    3. Enter 'npm install' into the terminal.
+    4. Enter 'npm install' into the terminal.
        This will install all the packages listed in the 'packages.json' file.
-    4. Enter 'npm start' into the terminal to start the server.
+    5. Enter 'npm start' into the terminal to start the server.
+    
     
     If any errors occur, try installing the packages through the Install Software section in 'Tools'.
 */
