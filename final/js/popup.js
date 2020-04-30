@@ -15,6 +15,7 @@ $(document).ready(function() {
 
         $("#opener").ready(function() {
             $("#dialog").dialog("open");
+            $('#dialog').dialog('close');                
+            }, 3000);
         });
     }, 5000);
-});
