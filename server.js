@@ -1,3 +1,32 @@
+Skip to content
+Search or jump to…
+
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@calumw19 
+CM2104-DynamicWebDevelopment
+/
+cm2104-group-web-app-dacks
+Private
+3
+00
+ Code
+ Issues 1
+ Pull requests 0 Actions
+ Projects 0
+ Wiki
+ Security 0
+ Insights
+ Settings
+cm2104-group-web-app-dacks/server.js /
+@kalzeo kalzeo Update server.js
+a32a6ea 41 minutes ago
+@kalzeo@calumw19
+211 lines (168 sloc)  9.15 KB
+  
 /*
     The following steps will walk you through setting up the server and relevant npm packages
     to the project.
@@ -73,7 +102,23 @@ MongoClient.connect(url, function (err, database)
         {date: "2ND FEBUARY 2020", text: "10 PEOPLE ON BOARD A CRUISE SHIP IN JAPAN TEST POSITIVE FOR THE VIRUS. THE SHIP HOLDS ALMSOT 4000 PEOPLE."},
         {date: "7TH FEBUARY 2020", text: "LI WENLIANG, THE CHINESE DOCTOR WHO WARNED PEOPLE ABOUT THE VIRUS A MONTH BEFORE THE FIRST CONFIRMED CASE, DIES FROM THE VIRUS."},
         {date: "14TH FEBUARY 2020", text: "FIRST DEATH IN EUROPE IS A CHINESE TRAVELLER WHO WAS STAYING IN FRANCE."},
-        {date: "25TH FEBRUARY 2020", text: "THE CDC IN THE USA WARN AMERICAN CITEZENS TO PREPARE FOR DISRUPTION AS A RESULT OF THE VIRUS."}
+        {date: "25TH FEBRUARY 2020", text: "THE CDC IN THE USA WARN AMERICAN CITEZENS TO PREPARE FOR DISRUPTION AS A RESULT OF THE VIRUS."},
+		{date: "1ST MARCH 2020", text: "GLOBAL DEATH TOLL REACHES 3000"},
+		{date: "5TH MARCH 2020", text: "CDC ADVISES ALL PEOPLE OVER 60 TO STAY AT HOME FOR 3 MONTHS"},
+		{date: "9TH MARCH 2020", text: "ITALY ENTERS NATIONWIDE LOCKDOWN"},
+		{date: "MARCH 11TH 2020", text: "COVID-19 IS LABLED A WORLDWIDE PANDEMIC BY THE WHO"},
+		{date: "MARCH 19TH 2020", text: "ITALY DEATH TOLL SURPASSES CHINA"},
+		{date: "MARCH 23RD 2020", text: "UK IS PLACED ON LOCKDOWN"},
+		{date: "27TH MARCH 2020", text: "UK PRIMISTER, BORIS JOHNSTON TESTS POSITIVE FOR CORONAVIRUS"},
+		{date: "APRIL 2ND", text: "TOTAL POSITIVE CASES REACH 1 MILLION WORLDWIDE."},
+		{date: "APRIL 6TH 2020", text: "US ANNOUNCE 10,000 DEATHS DUE TO COVID-19"},
+		{date: "APRIL 7TH", text: "UK PRIME MINISTER IS MOVED TO INTESIVE CARE"},
+		{date: "APRIL 10TH 2020", text: "TOTAL WORLDWIDE DEATHS OVER 100,000"},
+		{date: "APRIL 12TH 2020", text: "WUHAN REOPEN WETMARKETS, THE POSSIBLE SOURCE OF THE VIRUS"},
+		{date: "22ND APRIL 2020", text: "NETHERLANDS BAN ALL MASS GATHERINGS UNTIL 1ST OF SEPTEMBER"},
+		{date: "23RD APRIL 2020", text: "PRESIDENT DONALD TRUMP RECOMMENDS CONSUMING DISENFECTENTS TO FIGHT THE VIRUS "},
+		{date: "27TH APRIL 2020", text: "US ANNOUNCE OVER 1 MILLION POSITIVE CASES OF CORONAVIRUS"},
+		{date: "29TH APRIL 2020", text: "OVER 3 MILLION GLOBAL CASES OF CORONAVIRUS, WITH 219,000 DEATHS"},
     ];
     
 
@@ -209,3 +254,15 @@ app.use(express.static("final"));
 
 // Listen on port 8080
 app.listen(8080);
+© 2020 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
