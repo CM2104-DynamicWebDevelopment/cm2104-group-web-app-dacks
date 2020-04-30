@@ -15,8 +15,9 @@ $(document).ready(function() {
 
         $("#opener").ready(function() {
             $("#dialog").dialog("open");
-        });
-		setTimeout(function(){
+					setTimeout(function(){
 			$("#mydialog").dialog('close')
 		}, 3000);
+        });
+
     }, 5000);
