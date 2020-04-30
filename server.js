@@ -1,15 +1,35 @@
-// Follow the below steps in your codio terminal to set up and use the server:
-// > navigate to the same direction as server.js
-// > npm init
-// > npm install mongodb@2.2.33
-// > npm install express
-// > npm install twitter
-// > npm install ejs
-// > npm start
+/*
+    The following steps will walk you through setting up the server and relevant npm packages
+    to the project.
+    
+    Within the project structure there should be a file called 'package.json' in the root. If
+    that file isn't there follow these steps to install everything otherwise skip to the next 
+    set of steps.
+    
+    -- STEPS TO INSTALL IF THERE'S NO PACKAGE.JSON FILE --
+    1. Open the folder location of 'cm2104-group-web-app-dacks' on your codio terminal.
+    2. Enter 'npm init' into the terminal.
+       Set the description to 'COVID-19 Tracker' and the author to 'DACKS'.
+    3. Enter 'npm install mongodb@2.2.33' into the terminal.
+    4. Enter 'npm install express' into the terminal. 
+    5. Enter 'npm install ejs' into the terminal.
+    6. Enter 'npm install twitter' into the terminal.
+    7. Enter 'npm start' into the terminal to start the server.
+    
+    -- STEPS TO INSTALL IF THERE IS PACKAGE.JSON FILE --
+    1. Open the folder location of 'cm2104-group-web-app-dacks' on your codio terminal.
+    2. Enter 'npm init' into the terminal.
+       Keep pressing enter and the packages.json info will be inserted.
+    3. Enter 'npm install' into the terminal.
+       This will install all the packages listed in the 'packages.json' file.
+    4. Enter 'npm start' into the terminal to start the server.
+    
+    If any errors occur, try installing the packages through the Install Software section in 'Tools'.
+*/
 
-const MongoClient = require("mongodb").MongoClient; // npm install mongodb@2.2.33
+const MongoClient = require("mongodb").MongoClient;
 const url = "mongodb://localhost:27017/";
-const express = require("express"); // sudo npm install express -g
+const express = require("express");
 const app = express();
 
 // set the view engine to ejs
