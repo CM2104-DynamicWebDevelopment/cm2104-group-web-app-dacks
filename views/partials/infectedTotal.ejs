@@ -1,9 +1,13 @@
+<!-- views/partials/infectedTotal.ejs -->
+<!-- Display the infected total and statistics -->
 <div class="flash">
     <div class="row" id="infectedRow">
         <div class="margin-auto">
             <div class="col">
+                <!-- Infected total count -->
                 <h2 class="animated flash delay-2s" id="infectedTotal"><%- infectedTotal %></h2>
                 <br>
+                <!-- Button to view statistics -->
                 <p class="text-center"><i><%- viewStats %><a data-toggle="modal" data-target="#statisticsModal" id="boldtext"><%- pressHere %></a></i></p>
             </div>
         </div>
