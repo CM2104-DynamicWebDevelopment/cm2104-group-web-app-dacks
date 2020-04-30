@@ -194,7 +194,11 @@ app.get("/", function (req, res) {
             
             statistics: "Statistics",
             
-            testKnowlegde: "Test your stay safe knowledge by clicking "
+            testKnowlegde: "Test your stay safe knowledge by clicking ",
+
+            sendEmail: {heading: "Send Message", name: "Name:", message: "Message:", email: "Email:", send: "Send Email"},
+            
+            contactUs: "Contact Us"
         });
       });
 });
