@@ -180,7 +180,8 @@ app.get("/", function (req, res) {
             
             copyright: "© 2020 Copyright: DACKS",
             
-            quiz: {question: "Recommended Distance From Others?",
+            quiz: {heading: "Stay Safe Quiz",
+                  question: "Recommended Distance From Others?",
                   q1: "2 Metres",
                   q2: "No Distance",
                   q3: "1 Metre",
