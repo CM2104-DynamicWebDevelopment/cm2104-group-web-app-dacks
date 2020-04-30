@@ -200,10 +200,9 @@ app.get("/", function (req, res) {
 	    // Text relating to prevention for the stay safe page
             preventionData: {heading: "Prevention",
                              p1: "Always Cover Mouth and Nose with Tissue Whilst Sneezing",
-                             p2: "Avoid Large Gatherings",
+                             p2: "Recommended to Stay Atleast 2M From Others",
                              p3: "Avoid Travelling To Countries/Regions Where COVID-19 Has Been Found",
-                             p4: "Avoid Contact with People Suspected of Infection",
-			     p5: "Recommended to Stay Atleast 2M From Others"},
+                             p4: "Avoid Contact with People Suspected of Infection"},
             
             // Copyright notice
             copyright: "© 2020 Copyright: DACKS",
