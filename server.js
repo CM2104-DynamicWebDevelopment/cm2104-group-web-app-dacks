@@ -184,8 +184,16 @@ app.get("/", function (req, res) {
                   q1: "2 Metres",
                   q2: "No Distance",
                   q3: "1 Metre",
-                  q4: "3 Metres"}
-         });
+                  q4: "3 Metres"},
+            
+            pressHere: "HERE",
+            
+            viewStats: "To view a full list of the statistics click ",
+            
+            close: "Close",
+            
+            statistics: "Statistics"
+        });
       });
 });
 
