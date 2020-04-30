@@ -374,6 +374,15 @@ label .btn-label {
     color: inherit
 }
 
+#question
+{
+    font-size: 20px;
+}
+
+.modal-body {
+    text-align: center !important;
+}
+
 #loadbar {
     position: absolute;
     width: 62px;
