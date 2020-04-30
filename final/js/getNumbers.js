@@ -15,9 +15,11 @@ $(document).ready(function()
 
 		// Append the total to the number of infected string
 		$("#infectedTotal").append(total);
+		
 		cured = data[0].curedCases;
 		dead = data[0].totalDead;
-
+	
+	// Update the statistics modal with the number of cases, deaths and cured
         $('#statisticsModal .modal-body').append(`Confirmed Cases: ${total}<br>Confirmed Deaths: ${dead}<br>Confirmed Cured: ${cured}`);
 	});
 });
