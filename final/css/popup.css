@@ -1,5 +1,5 @@
 .ui-widget-content p {
-  color: white;
+  color: black;
 }
 
 .ui-widget-content {
@@ -10,7 +10,7 @@
 .ui-widget-header {
   border: 0px solid #dddddd;
   background: #900000;
-  color: white;
+  color: black;
   text-transform: uppercase;
 }
 
