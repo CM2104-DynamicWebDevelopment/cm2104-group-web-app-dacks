@@ -8,6 +8,10 @@
     
     -- STEPS TO INSTALL IF THERE'S NO PACKAGE.JSON FILE --
     1. Download MongoDB from Tools > Install Software > MongoDB (can prevent errors)
+       If you encounter errors whilst installing MongoDB from the tools, try running the
+       following command 'sudo dkpg --configure -a' using Terminal and then retry.
+       
+       Additionally, try update your npm using the command 'npm i nom-upgrade'
     2. Open the folder location of 'cm2104-group-web-app-dacks' on your codio terminal.
     3. Enter 'npm init' into the terminal.
        Set the description to 'COVID-19 Tracker' and the author to 'DACKS'.
@@ -19,6 +23,10 @@
     
     -- STEPS TO INSTALL IF THERE IS PACKAGE.JSON FILE --
     1. Download MongoDB from Tools > Install Software > MongoDB (can prevent errors)
+       If you encounter errors whilst installing MongoDB from the tools, try running the
+       following command 'sudo dpkg --configure -a' using Terminal and then retry.
+       
+       Additionally, try update your npm using the command 'npm i npm-upgrade'
     2. Open the folder location of 'cm2104-group-web-app-dacks' on your codio terminal.
     3. Enter 'npm init' into the terminal.
        Keep pressing enter and the packages.json info will be inserted.
