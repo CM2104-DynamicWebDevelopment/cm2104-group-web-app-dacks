@@ -11,7 +11,7 @@
        If you encounter errors whilst installing MongoDB from the tools, try running the
        following command 'sudo dkpg --configure -a' using Terminal and then retry.
        
-       Additionally, try update your npm using the command 'npm i nom-upgrade'
+       Additionally, try update your npm using the command 'npm i npm-upgrade'
     2. Open the folder location of 'cm2104-group-web-app-dacks' on your codio terminal.
     3. Enter 'npm init' into the terminal.
        Set the description to 'COVID-19 Tracker' and the author to 'DACKS'.
