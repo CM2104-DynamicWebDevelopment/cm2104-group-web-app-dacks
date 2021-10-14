@@ -51,10 +51,10 @@ app.set("view engine", "ejs");
 
 // Create a Twitter client
 var client = new Twitter({
-    consumer_key: "tOBOpXRWxDvqc6Dbvv8MLmnYQ",
-    consumer_secret: "YPuSU6rKETHEtdVTqusE209Cl7DHHjop3JYXg3cATQAbMJC16x",
-    access_token_key: "1580455674-XGoXPCP7CzLFgYascjJONsJP2pAFZDHuVjUlOUa",
-    access_token_secret: "8WtYDRYCAuTieokrMc47yvz5YwBsvAjfaKzNiYlEloodl",
+    consumer_key: "",
+    consumer_secret: "",
+    access_token_key: "",
+    access_token_secret: "",
 });
 
 // Connect to the MongoDB
